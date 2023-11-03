@@ -725,9 +725,9 @@ release_go() {
   clear
   printf "\n$BDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG *"
 
-  #cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
-  #chmod +x $HOME/.local/bin/elucidate.sh
-  #sleep 1
+  cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
+  chmod +x $HOME/.local/bin/elucidate.sh
+  sleep 1
 
   rebuild_optim
 
@@ -755,9 +755,9 @@ wld_go() {
   clear
   printf "\n$BDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  #cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
-  #chmod +x $HOME/.local/bin/elucidate.sh
-  #sleep 1
+  cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
+  chmod +x $HOME/.local/bin/elucidate.sh
+  sleep 1
 
   rebuild_wld
 
