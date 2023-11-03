@@ -1,4 +1,4 @@
-# elucidate
+# elucidate - WIP
 
 A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu Noble Numbat.
 
@@ -8,7 +8,7 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-Before you start using esteem, you'll need to install git on your system.
+Before you start using elucidate, you'll need to install git on your system.
 
 Open a terminal window and type in the following:
 
