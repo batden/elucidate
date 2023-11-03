@@ -4,7 +4,7 @@
 # other applications based on the Enlightenment Foundation Libraries (EFL),
 # in your Ubuntu LTS desktop system.
 
-# Supported distribution: Noble Numbat
+# Supported distribution: Noble Numbat.
 # Running Jammy Jellyfish? See https://github.com/batden/elluminate
 
 # ELUCIDATE takes care of downloading, configuring and building everything you
@@ -59,7 +59,7 @@ SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
 DDTL=2.0.0
 
-# For now, gstreamer1.0-plugins-bad is broken.
+# For now gstreamer1.0-plugins-bad is broken, hence not included.
 #
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell build-essential ccache check cmake cowsay ddcutil doxygen \
