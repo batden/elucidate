@@ -4,7 +4,7 @@ A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu
 
 Please take a look at the comments in the script before running it.
 
-*See also [meetse.sh](https://github.com/batden/meetse) (companion script).*
+*See also [eloge.sh](https://github.com/batden/eloge) (companion script).*
 
 ## Get started
 
