@@ -201,7 +201,7 @@ ls_dir() {
     beep_exit
     exit 1
   else
-    # If the download of efl fails, nothing will compile!
+    # WARNING: If the download of efl fails, nothing will compile!
     printf "\n$BDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
     printf "\n$BDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention
@@ -279,7 +279,7 @@ rstrt_e() {
 #
 # JXL support:
 # For best results, jpeg xl has to be compiled from source.
-# please follow the instructions below:
+# Please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to:
