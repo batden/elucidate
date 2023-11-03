@@ -27,7 +27,7 @@
 # with prebuilt binaries! Therefore, please remove thoroughly any previous
 # binary installation of EFL/Enlightenment/E-apps before running ELUCIDATE.
 
-# ELUCIDATE is written and maintained by batden@sfr.fr and carlasensa@sfr.fr.
+# ELUCIDATE is written and actively maintained by batden@sfr.fr and carlasensa@sfr.fr.
 # This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
 # International License, in memory of Aaron Swartz.
 
@@ -59,7 +59,7 @@ SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
 DDTL=2.0.0
 
-# For now gstreamer1.0-plugins-bad is broken.
+# For now, gstreamer1.0-plugins-bad is broken.
 #
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell build-essential ccache check cmake cowsay ddcutil doxygen \
@@ -305,7 +305,7 @@ build_plain() {
           -Dfb=true \
           -Dbuild-tests=false \
           -Dlua-interpreter=lua \
-          -Devas-loaders-disabler= \
+          -Devas-loaders-disabler=jxl \
           -Dglib=true
         ninja -C build || mng_err
       fi
@@ -314,10 +314,6 @@ build_plain() {
       meson setup build -Dbuildtype=plain
       ninja -C build || mng_err
       ;;
-      # IF YOU WANT EDI TO COMPILE, YOU'LL NEED TO INSTALL THE PACKAGES
-      # LISTED IN THE LINK BELOW BEFORE RUNNING THE SCRIPT.
-      # https://gist.github.com/batden/99a7ebdd5ba9d9e83b2446ab5f05f3dc
-      #
     edi)
       meson setup build -Dbuildtype=plain \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
@@ -385,7 +381,7 @@ rebuild_optim() {
           -Dlua-interpreter=lua \
           -Delua=true \
           -Dbindings=lua,cxx \
-          -Devas-loaders-disabler= \
+          -Devas-loaders-disabler=jxl \
           -Dglib=true \
           -Ddrm=true \
           -Dbuild-tests=false \
@@ -473,7 +469,7 @@ rebuild_wld() {
           -Dlua-interpreter=lua \
           -Delua=true \
           -Dbindings=lua,cxx \
-          -Devas-loaders-disabler= \
+          -Devas-loaders-disabler=jxl \
           -Dglib=true \
           -Ddrm=true \
           -Dwl=true \
