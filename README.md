@@ -1,6 +1,6 @@
-# esteem
+# elucidate
 
-A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu.
+A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu Noble Numbat.
 
 Please take a look at the comments in the script before running it.
 
@@ -8,48 +8,48 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-Before you start using esteem, you'll need to install the packages git and sound-icons on your system.
+Before you start using esteem, you'll need to install git on your system.
 
 Open a terminal window and type in the following:
 
 ```bash
-sudo apt install git sound-icons
+sudo apt install git
 ```
 
 Next, clone this repository:
 
 ```bash
-git clone https://github.com/batden/esteem.git .esteem
+git clone https://github.com/batden/elucidate.git .elucidate
 ```
 
-This creates a new hidden folder named **.esteem** in your home directory.
+This creates a new hidden folder named **.elucidate** in your home directory.
 
-Please copy the file esteem.sh from this new folder to the download folder.
+Please copy the file elucidate.sh from this new folder to the download folder.
 
 Now change to the download folder and make the script executable:
 
 ```bash
-chmod +x esteem.sh
+chmod +x elucidate.sh
 ```
 
 Then issue the following command:
 
 ```bash
-./esteem.sh
+./elucidate.sh
 ```
 
 On subsequent runs, open a terminal and simply type:
 
 ```bash
-esteem.sh
+elucidate.sh
 ```
 
-(Use auto-completion: Just type *est* and press Tab.)
+(Use auto-completion: Just type *elu* and press Tab.)
 
 ## Update local repository
 
 Be sure to check for updates at least once a week.
-In order to do this, change to ~/.esteem/ and run:
+In order to do this, change to ~/.elucidate/ and run:
 
 ```bash
 git pull
