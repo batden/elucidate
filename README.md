@@ -44,7 +44,7 @@ On subsequent runs, open a terminal and simply type:
 elucidate.sh
 ```
 
-(Use auto-completion: Just type *elu* and press Tab.)
+(Use auto-completion: Just type *eluc* and press Tab.)
 
 ## Update local repository
 
