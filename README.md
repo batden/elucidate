@@ -1,4 +1,4 @@
-# elucidate - WIP
+# elucidate
 
 A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu Noble Numbat.
 
