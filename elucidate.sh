@@ -699,7 +699,7 @@ install_now() {
   printf "\n$BTC%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
   printf "\n$BTC%s $OFF%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
   # Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
-  # to your Desktop, you can safely delete them if it bothers you.
+  # to your Gnome Desktop, you can safely delete them if it bothers you.
 
   echo
   cowsay "Now reboot your computer then select Enlightenment on the login screen... \
