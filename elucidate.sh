@@ -228,7 +228,7 @@ elap_stop() {
 #
 # To restore a backup, use the same command that was executed but with
 # the source and destination reversed:
-# e.g. cp -aR /home/riley/Documents/ebackups/E_1699168761 .e* /home/riley/
+# e.g. cp -aR /home/riley/Documents/ebackups/E_1699512402 .e* /home/riley/
 # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 #
 e_bkp() {
@@ -365,10 +365,6 @@ rebuild_optim() {
     $REBASEF && git pull
 
     case $I in
-    # If you experience screen stuttering/glitching with Nvidia drivers, try changing
-    # the option “-Ddrm=true” to “-Ddrm=false”.
-    # See also https://www.enlightenment.org/docs/distros/nvidia-start.md
-    #
     efl)
       if [ $DISTRO == noble ]; then
         sudo chown $USER build/.ninja*
