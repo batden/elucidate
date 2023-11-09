@@ -5,7 +5,6 @@
 # in your Ubuntu LTS desktop system.
 
 # Supported distribution: Ubuntu Noble Numbat.
-# Running Jammy Jellyfish? See https://github.com/batden/elluminate
 
 # ELUCIDATE takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
