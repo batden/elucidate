@@ -276,12 +276,12 @@ rstrt_e() {
 # BEFORE RUNNING THE SCRIPT!
 #
 # JXL support:
-# For best results, jpeg xl has to be compiled from source.
-# Please follow the instructions below:
+# For best results, jpeg xl has to be compiled from source. If you really need jxl
+# support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to:
-# "-Devas-loaders-disabler=”
+# "-Devas-loaders-disabler=” whenever it's applicable.
 #
 # (If building jxl is too much of a hassle for you, then install
 # the package libjxl-dev instead.)
