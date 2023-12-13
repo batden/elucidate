@@ -8,7 +8,7 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-Before you start using elucidate, you'll need to install git on your system.
+Before using elucidate, you'll need to install git on your system.
 
 Open a terminal window and type in the following:
 
@@ -24,15 +24,15 @@ git clone https://github.com/batden/elucidate.git .elucidate
 
 This creates a new hidden folder named **.elucidate** in your home directory.
 
-Please copy the file elucidate.sh from this new folder to the download folder.
+Copy the elucidate.sh file from the new .elucidate folder to your download folder.
 
-Now change to the download folder and make the script executable:
+Navigate to the download folder and make the script executable:
 
 ```bash
 chmod +x elucidate.sh
 ```
 
-Then issue the following command:
+Then run the following command:
 
 ```bash
 ./elucidate.sh
@@ -48,7 +48,7 @@ elucidate.sh
 
 ## Update local repository
 
-Be sure to check for updates at least once a week.
+Check for updates at least once a week.
 In order to do this, change to ~/.elucidate/ and run:
 
 ```bash
