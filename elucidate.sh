@@ -30,7 +30,7 @@
 # See https://creativecommons.org/licenses/by-sa/4.0/
 
 # Got a GitHub account? Please consider starring our repositories to show your support.
-# Cheers!
+# Thank you!
 
 # ---------------
 # LOCAL VARIABLES
