@@ -92,8 +92,8 @@ CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MN” stands for Meson——the Meson build system.
-PROG_MN="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
+# “MBS” stands for the Meson build system.
+PROG_MBS="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
@@ -283,7 +283,7 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for I in $PROG_MN; do
+  for I in $PROG_MBS; do
     cd $ESRC/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Building $I..."
 
@@ -344,7 +344,7 @@ rebuild_optim() {
   $SNIN
   sudo ldconfig
 
-  for I in $PROG_MN; do
+  for I in $PROG_MBS; do
 
     cd $ESRC/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
@@ -426,7 +426,7 @@ rebuild_wld() {
   $SNIN
   sudo ldconfig
 
-  for I in $PROG_MN; do
+  for I in $PROG_MBS; do
 
     cd $ESRC/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
