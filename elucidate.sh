@@ -261,9 +261,9 @@ rstrt_e() {
   fi
 }
 
-# BEFORE RUNNING THE SCRIPT!
+# BEFORE RUNNING THE SCRIPT...
 #
-# JXL support:
+# Add JXL support?
 # For best results, jpeg xl has to be compiled from source. If you really need jxl
 # support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
@@ -272,9 +272,9 @@ rstrt_e() {
 # "-Devas-loaders-disabler=” whenever it's applicable.
 #
 # (If building jxl is too much of a hassle for you, then install
-# the package libjxl-dev instead.)
+# the libjxl-dev package instead.)
 #
-# EDI dependencies:
+# Get EDI dependencies?
 # if you want edi to compile, you'll need to install the packages
 # listed in the link below:
 # https://gist.github.com/batden/99a7ebdd5ba9d9e83b2446ab5f05f3dc
