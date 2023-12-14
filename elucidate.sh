@@ -22,7 +22,7 @@
 
 # Heads up!
 # Enlightenment programs installed from DEB packages or TAR archives will inevitably clash
-# with the ones compiled from git repositories. Therefore, please remove any previous
+# with the ones compiled from git repositories. Therefore, remove any previous
 # binary installation of EFL/Enlightenment/E-apps before running ELUCIDATE.
 
 # ELUCIDATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
@@ -211,16 +211,6 @@ mng_err() {
   exit 1
 }
 
-elap_start() {
-  START=$(date +%s)
-}
-
-elap_stop() {
-  DELTA=$(($(date +%s) - START))
-  printf "\n$ITA%s $OFF%s\n" "Compilation and linking time: "
-  eval "echo $(date -ud "@$DELTA" +'%H hr %M min %S sec')"
-}
-
 # Timestamp: See the date man page to convert epoch to human-readable date
 # or visit https://www.epochconverter.com/
 #
@@ -340,7 +330,6 @@ rebuild_optim() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
-  elap_start
 
   cd $ESRC/rlottie
   printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
@@ -355,10 +344,7 @@ rebuild_optim() {
   $SNIN
   sudo ldconfig
 
-  elap_stop
-
   for I in $PROG_MN; do
-    elap_start
 
     cd $ESRC/enlighten/$I
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
@@ -413,8 +399,6 @@ rebuild_optim() {
     beep_attention
     $SNIN
     sudo ldconfig
-
-    elap_stop
   done
 }
 
@@ -428,7 +412,6 @@ rebuild_wld() {
   ESRC=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
-  elap_start
 
   cd $ESRC/rlottie
   printf "\n$BLD%s $OFF%s\n\n" "Updating rlottie..."
@@ -443,10 +426,7 @@ rebuild_wld() {
   $SNIN
   sudo ldconfig
 
-  elap_stop
-
   for I in $PROG_MN; do
-    elap_start
 
     cd $ESRC/enlighten/$I
     printf "\n$BLD%s $OFF%s\n\n" "Updating $I..."
@@ -502,8 +482,6 @@ rebuild_wld() {
     beep_attention
     $SNIN
     sudo ldconfig
-
-    elap_stop
   done
 }
 
