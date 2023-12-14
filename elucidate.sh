@@ -81,7 +81,7 @@ xdotool xserver-xephyr xwayland"
 # Latest development code.
 CLONEFL="git clone https://git.enlightenment.org/enlightenment/efl.git"
 CLONETY="git clone https://git.enlightenment.org/enlightenment/terminology.git"
-CLOEENL="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
+CLONENL="git clone https://git.enlightenment.org/enlightenment/enlightenment.git"
 CLONEPH="git clone https://git.enlightenment.org/enlightenment/ephoto.git"
 CLONERG="git clone https://git.enlightenment.org/enlightenment/rage.git"
 CLONEVI="git clone https://git.enlightenment.org/enlightenment/evisum.git"
@@ -635,7 +635,7 @@ install_now() {
   echo
   $CLONETY
   echo
-  $CLOEENL
+  $CLONENL
   echo
   $CLONEPH
   echo
