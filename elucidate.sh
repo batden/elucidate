@@ -55,7 +55,7 @@ REBASEF="git config pull.rebase false"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
-DDTL=2.0.0
+DDCTL=2.0.0
 
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme aspell build-essential ccache check cmake cowsay doxygen fonts-noto \
@@ -588,14 +588,14 @@ get_preq() {
   printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
 
   cd $DLDIR
-  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+  wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
 
-  tar xzvf v$DDTL.tar.gz -C $ESRC
-  cd $ESRC/ddcutil-$DDTL
+  tar xzvf v$DDCTL.tar.gz -C $ESRC
+  cd $ESRC/ddcutil-$DDCTL
   $AUTGN
   make
   $SMIL
-  rm -rf $DLDIR/v$DDTL.tar.gz
+  rm -rf $DLDIR/v$DDCTL.tar.gz
   echo
 
   cd $ESRC
