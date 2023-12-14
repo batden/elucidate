@@ -92,7 +92,7 @@ CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MBS” stands for the Meson build system.
+# “MBS” stands for Meson build system.
 PROG_MBS="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
@@ -130,7 +130,7 @@ beep_ok() {
 # 2: A feature-rich, decently optimized build on Xorg; recommended for most users.
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 #
-menu_sel() {
+menu_selec() {
   if [ $INPUT -lt 1 ]; then
     echo
     printf "1  $BLDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
@@ -142,7 +142,7 @@ menu_sel() {
   fi
 }
 
-sel_menu() {
+selec_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
     printf "1  $LOWG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
@@ -763,9 +763,9 @@ lo() {
   printf "\n$BOLD%s $OFF%s\n" "Please enter the number of your choice:"
 
   if [ ! -x /usr/local/bin/enlightenment_start ]; then
-    menu_sel
+    menu_selec
   else
-    sel_menu
+    selec_menu
   fi
 }
 
