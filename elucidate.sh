@@ -22,7 +22,7 @@
 
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably come into conflict
-# with the ones installed from DEB package. Therefore, remove any previous binary
+# with the ones installed from DEB packages. Therefore, remove any previous binary
 # installation of EFL/Enlightenment/E-apps before running ELUCIDATE.
 
 # ELUCIDATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
