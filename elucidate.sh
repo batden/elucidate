@@ -21,9 +21,9 @@
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs installed from DEB packages or TAR archives will inevitably clash
-# with the ones compiled from git repositories. Therefore, remove any previous
-# binary installation of EFL/Enlightenment/E-apps before running ELUCIDATE.
+# Enlightenment programs compiled from git source code will inevitably come into conflict
+# with the ones installed from DEB package. Therefore, remove any previous binary
+# installation of EFL/Enlightenment/E-apps before running ELUCIDATE.
 
 # ELUCIDATE is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
