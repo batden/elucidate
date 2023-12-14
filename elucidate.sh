@@ -6,7 +6,7 @@
 
 # Supported distribution: Ubuntu Noble Numbat.
 
-# ELUCIDATE takes care of downloading, configuring and building everything you
+# ELUCIDATE.SH takes care of downloading, configuring and building everything you
 # need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages tend to lag far behind). Once installed, you can update
 # your Enlightenment desktop whenever you want to.
@@ -23,7 +23,7 @@
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably come into conflict
 # with the ones installed from DEB packages. Therefore, remove any previous binary
-# installation of EFL, Enlightenment and E-apps before running ELUCIDATE.
+# installation of EFL, Enlightenment and E applications before running ELUCIDATE.
 
 # ELUCIDATE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
 # in memory of Aaron Swartz.
