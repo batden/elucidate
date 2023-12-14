@@ -346,7 +346,6 @@ rebuild_optim() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-
     cd $ESRC/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
@@ -428,7 +427,6 @@ rebuild_wld() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-
     cd $ESRC/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
