@@ -572,8 +572,10 @@ EOF
 set_p_src() {
   echo
   beep_attention
+
   # Do not append a trailing slash (/) to the end of the path prefix,
   # and double-check the path you entered before validating.
+  #
   read -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
   mkdir -p "$mypath"/sources
@@ -680,7 +682,8 @@ install_now() {
   printf "\n\n$BRTC%s %s" "INITIAL SETUP WIZARD TIPS:"
   printf "\n$BRTC%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
   printf "\n$BRTC%s $OFF%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
-  # Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
+
+  # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Gnome Desktop, you can safely delete them if it bothers you.
 
   echo
@@ -760,7 +763,7 @@ wld_go() {
 
 # Lo and behold (bhd)!
 #
-# Displays the selection menu and gets the user's choice.
+# Displays the selection menu...
 #
 lo() {
   trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
@@ -775,6 +778,7 @@ lo() {
   fi
 }
 
+# and gets the user's choice.
 bhd() {
   if [ $INPUT == 1 ]; then
     do_tests
