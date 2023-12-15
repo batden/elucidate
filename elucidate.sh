@@ -404,7 +404,7 @@ rebuild_optim() {
   done
 }
 
-rebuild_wld() {
+rebuild_wayld() {
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "\n$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
@@ -726,7 +726,7 @@ release_go() {
   exit 0
 }
 
-wld_go() {
+wayld_go() {
   clear
   printf "\n$BLDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
@@ -734,7 +734,7 @@ wld_go() {
   chmod +x $HOME/.local/bin/elucidate.sh
   sleep 1
 
-  rebuild_wld
+  rebuild_wayld
 
   sudo mkdir -p /usr/share/wayland-sessions
   sudo ln -sf /usr/local/share/wayland-sessions/enlightenment.desktop \
@@ -788,7 +788,7 @@ bhd() {
     release_go
   elif [ $INPUT == 3 ]; then
     do_tests
-    wld_go
+    wayld_go
   else
     beep_exit
     exit 1
