@@ -758,7 +758,10 @@ wld_go() {
   exit 0
 }
 
-# Lo and behold!
+# Lo and behold (bhd)!
+#
+# Displays the selection menu and gets the user's choice.
+#
 lo() {
   trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
