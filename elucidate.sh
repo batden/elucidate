@@ -91,10 +91,11 @@ CLONEVE="git clone https://git.enlightenment.org/enlightenment/enventor.git"
 CLONEDI="git clone https://git.enlightenment.org/enlightenment/edi.git"
 CLONENT="git clone https://git.enlightenment.org/vtorri/entice.git"
 CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-forecasts.git"
+CLONEPN="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
 # “MBS” stands for Meson build system.
-PROG_MBS="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts eflete"
+PROG_MBS="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts enlightenment-module-penguins eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
@@ -188,7 +189,7 @@ bin_deps() {
 
 ls_dir() {
   COUNT=$(ls -d -- */ | wc -l)
-  if [ $COUNT == 13 ]; then
+  if [ $COUNT == 14 ]; then
     printf "$BLDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
@@ -199,7 +200,7 @@ ls_dir() {
     exit 1
   else
     # WARNING: If the download of efl fails, nothing will compile!
-    printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 13 PROGRAMS HAVE BEEN DOWNLOADED!"
+    printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 14 PROGRAMS HAVE BEEN DOWNLOADED!"
     printf "\n$BLDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention
     sleep 12
@@ -273,8 +274,8 @@ rstrt_e() {
 # Then change the option “-Devas-loaders-disabler=jxl” to
 # "-Devas-loaders-disabler=” whenever it's applicable.
 #
-# (If building jxl is too much of a hassle for you, then install
-# the libjxl-dev package instead.)
+# Note: If building jxl is too much of a hassle for you, then install
+# the libjxl-dev package instead.
 #
 # Get EDI dependencies?
 # if you want edi to compile, you'll need to install the packages
@@ -653,6 +654,8 @@ install_now() {
   $CLONENT
   echo
   $CLONEFT
+  echo
+  $CLONEPN
   printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from Dimmus' git repository..."
   $CLONETE
   echo
