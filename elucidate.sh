@@ -156,7 +156,7 @@ selec_menu() {
   fi
 }
 
-p_bkp() {
+instl_bkp() {
   # Backup list of currently installed DEB packages.
   if [ ! -f $DOCDIR/pbackups/installed_pkgs.log ]; then
     mkdir -p $DOCDIR/pbackups
@@ -623,7 +623,7 @@ install_now() {
   printf "\n$BLDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
   do_bsh_alias
   beep_attention
-  p_bkp
+  instl_bkp
   bin_deps
   set_p_src
   get_preq
