@@ -287,7 +287,7 @@ build_plain() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRC/enlighten/$I
+    cd $ESRCDIR/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Building $I..."
 
     case $I in
@@ -330,11 +330,11 @@ build_plain() {
 }
 
 rebuild_optim() {
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
-  cd $ESRC/rlottie
+  cd $ESRCDIR/rlottie
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
@@ -348,7 +348,7 @@ rebuild_optim() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRC/enlighten/$I
+    cd $ESRCDIR/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
@@ -411,11 +411,11 @@ rebuild_wayld() {
     exit 1
   fi
 
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
-  cd $ESRC/rlottie
+  cd $ESRCDIR/rlottie
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
@@ -429,7 +429,7 @@ rebuild_wayld() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRC/enlighten/$I
+    cd $ESRCDIR/enlighten/$I
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
@@ -579,31 +579,31 @@ set_p_src() {
   read -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
   mkdir -p "$mypath"/sources
-  ESRC="$mypath"/sources
-  echo $ESRC >$HOME/.cache/ebuilds/storepath
-  printf "\n%s\n\n" "You have chosen: $ESRC"
+  ESRCDIR="$mypath"/sources
+  echo $ESRCDIR >$HOME/.cache/ebuilds/storepath
+  printf "\n%s\n\n" "You have chosen: $ESRCDIR"
   sleep 2
 }
 
 # Prerequisites.
 get_preq() {
-  ESRC=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
 
   cd $DLDIR
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
 
-  tar xzvf v$DDCTL.tar.gz -C $ESRC
-  cd $ESRC/ddcutil-$DDCTL
+  tar xzvf v$DDCTL.tar.gz -C $ESRCDIR
+  cd $ESRCDIR/ddcutil-$DDCTL
   $AUTGN
   make
   $SMIL
   rm -rf $DLDIR/v$DDCTL.tar.gz
   echo
 
-  cd $ESRC
+  cd $ESRCDIR
   git clone https://github.com/Samsung/rlottie.git
-  cd $ESRC/rlottie
+  cd $ESRCDIR/rlottie
   meson setup build -Dbuildtype=plain \
     -Dexample=false
   ninja -C build
@@ -629,8 +629,8 @@ install_now() {
   get_preq
 
   cd $HOME
-  mkdir -p $ESRC/enlighten
-  cd $ESRC/enlighten
+  mkdir -p $ESRCDIR/enlighten
+  cd $ESRCDIR/enlighten
 
   printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
   $CLONEFL
