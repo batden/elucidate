@@ -51,7 +51,7 @@ OFF="\e[0m"     # Turn off ANSI colors and formatting.
 
 DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
-SCRFLR=$HOME/.elucidate
+SCRFLDR=$HOME/.elucidate
 REBASEF="git config pull.rebase false"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
@@ -700,7 +700,7 @@ release_go() {
   clear
   printf "\n$BLDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
+  cp -f $SCRFLDR/elucidate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elucidate.sh
   sleep 1
 
@@ -730,7 +730,7 @@ wayld_go() {
   clear
   printf "\n$BLDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  cp -f $SCRFLR/elucidate.sh $HOME/.local/bin
+  cp -f $SCRFLDR/elucidate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elucidate.sh
   sleep 1
 
