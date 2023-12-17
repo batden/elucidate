@@ -264,7 +264,7 @@ rstrt_e() {
   fi
 }
 
-# BEFORE RUNNING THE SCRIPT...
+# BEFORE EXECUTING THE SCRIPT...
 #
 # Add JXL support?
 # For best results, jpeg xl has to be compiled from source. If you really need jxl
