@@ -16,13 +16,13 @@ Open a terminal window and type in the following:
 sudo apt install git
 ```
 
-Next, clone this repository:
+Next, clone the repository:
 
 ```bash
 git clone https://github.com/batden/elucidate.git .elucidate
 ```
 
-This creates a new hidden folder named **.elucidate** in your home directory.
+This creates a new hidden folder named .elucidate in your home directory.
 
 Copy the elucidate.sh file from the new .elucidate folder to your download folder.
 
@@ -46,13 +46,11 @@ elucidate.sh
 
 (Use auto-completion: Just type *eluc* and press Tab.)
 
-## Update local repository
+## Update local repo
 
 Check for updates at least once a week.
-In order to do this, change to ~/.elucidate/ and run:
+To update the local repository, change to ~/.elucidate/ and run:
 
 ```bash
 git pull
 ```
-
-That's it.
