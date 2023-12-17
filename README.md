@@ -32,13 +32,13 @@ Navigate to the download folder and make the script executable:
 chmod +x elucidate.sh
 ```
 
-Then run the following command:
+Then execute the script with:
 
 ```bash
 ./elucidate.sh
 ```
 
-On subsequent runs, open a terminal and simply type:
+To run it again later, open a terminal and simply type:
 
 ```bash
 elucidate.sh
@@ -56,5 +56,3 @@ git pull
 ```
 
 That's it.
-
-Mind the cows! :cow2: :cow2: :cow2:
