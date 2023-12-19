@@ -187,8 +187,8 @@ bin_deps() {
   fi
 }
 
-ls_dir() {
-  COUNT=$(ls -d -- */ | wc -l)
+cnt_dir() {
+  COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
   if [ $COUNT == 14 ]; then
     printf "$BLDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
@@ -662,7 +662,7 @@ install_now() {
   $CLONETE
   echo
 
-  ls_dir
+  cnt_dir
   build_plain
 
   mkdir -p $HOME/.elementary/themes
