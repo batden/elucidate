@@ -199,7 +199,7 @@ cnt_dir() {
     beep_exit
     exit 1
   else
-    # WARNING: If the download of efl fails, nothing will compile!
+    # CAUTION: If the download of efl fails, nothing will compile!
     printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 14 PROGRAMS HAVE BEEN DOWNLOADED!"
     printf "\n$BLDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention
