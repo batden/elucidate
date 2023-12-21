@@ -100,8 +100,8 @@ efl
 terminology
 enlightenment
 ephoto
-evisum
 rage
+evisum
 express
 ecrire
 enventor
