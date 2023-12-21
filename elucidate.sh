@@ -94,8 +94,22 @@ CLONEFT="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 CLONEPN="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-penguins.git"
 CLONETE="git clone https://github.com/dimmus/eflete.git"
 
-# “MBS” stands for Meson build system.
-PROG_MBS="efl terminology enlightenment ephoto evisum rage express ecrire enventor edi entice enlightenment-module-forecasts enlightenment-module-penguins eflete"
+# “MBS” stands for Meson Build System.
+PROG_MBS="
+efl
+terminology
+enlightenment
+ephoto
+evisum
+rage
+express
+ecrire
+enventor
+edi
+entice
+enlightenment-module-forecasts
+enlightenment-module-penguins
+eflete"
 
 # Bug reporting: Uncomment the following (remove the leading # character) to force messages to
 # display in English during the build process.
