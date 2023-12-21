@@ -601,7 +601,7 @@ set_p_src() {
   sleep 2
 }
 
-# Prerequisites.
+# Install prerequisites.
 get_preq() {
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
