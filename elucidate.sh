@@ -150,8 +150,8 @@ menu_selec() {
   if [ $INPUT -lt 1 ]; then
     echo
     printf "1  $BLDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
-    printf "2  $LOWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
-    printf "3  $LOWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
+    printf "2  $LOWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode"
+    printf "3  $LOWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support"
 
     sleep 1 && printf "$ITAL%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
@@ -161,7 +161,7 @@ menu_selec() {
 selec_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $LOWG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
+    printf "1  $LOWG%s $OFF%s\n\n" "Install the Enlightenment ecosystem now"
     printf "2  $BLDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
     printf "3  $BLDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
