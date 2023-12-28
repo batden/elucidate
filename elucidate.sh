@@ -147,7 +147,6 @@ beep_ok() {
 # 3: Similar to the above, but running Enlightenment as a Wayland compositor is still considered experimental.
 # Avoid the third option with Nvidia drivers.
 #
-
 menu_selec() {
   if [ $INPUT -lt 1 ]; then
     echo
