@@ -361,7 +361,6 @@ build_plain() {
 }
 
 rebuild_optim() {
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
@@ -443,7 +442,6 @@ rebuild_wayld() {
     exit 1
   fi
 
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
@@ -611,9 +609,9 @@ set_p_src() {
   read -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
   mkdir -p "$mypath"/sources
-  ESRCDIR="$mypath"/sources
-  echo $ESRCDIR >$HOME/.cache/ebuilds/storepath
-  printf "\n%s\n\n" "You have chosen: $ESRCDIR"
+  SRCDIR="$mypath"/sources
+  echo $SRCDIR >$HOME/.cache/ebuilds/storepath
+  printf "\n%s\n\n" "You have chosen: $SRCDIR"
   sleep 2
 }
 
