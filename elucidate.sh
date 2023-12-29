@@ -34,7 +34,7 @@
 # Thank you!
 
 # ---------------
-# LOCAL VARIABLES
+# USER VARIABLES
 # ---------------
 
 BOLD="\e[1m"    # Bold text.
