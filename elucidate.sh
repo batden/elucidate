@@ -583,9 +583,10 @@ EOF
     touch $HOME/.bash_aliases
 
     cat >$HOME/.bash_aliases <<EOF
-    # ----------------
-    # GLOBAL VARIABLES
-    # ----------------
+    # ---------------------
+    # ENVIRONMENT VARIABLES
+    # ---------------------
+    # (These variables can be accessed from any shell sessions.)
 
     # Compiler and linker flags added by ELUCIDATE.
     export CC="ccache gcc"
