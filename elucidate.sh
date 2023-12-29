@@ -362,6 +362,7 @@ build_plain() {
 }
 
 rebuild_optim() {
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
@@ -443,6 +444,7 @@ rebuild_wayld() {
     exit 1
   fi
 
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
