@@ -190,6 +190,7 @@ bkp_instl() {
   fi
 }
 
+# Check binary dependencies.
 bin_deps() {
   sudo apt update && sudo apt full-upgrade
 
@@ -203,6 +204,7 @@ bin_deps() {
   fi
 }
 
+# Check source dependencies.
 cnt_dir() {
   COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
   case $COUNT in
