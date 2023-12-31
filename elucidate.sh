@@ -11,7 +11,7 @@
 # (DEB packages tend to lag far behind). Once installed, you can update
 # your Enlightenment desktop whenever you like.
 
-# Optional: Additional steps may be taken in order to achieve optimal results.
+# Facultative: Additional steps may be taken in order to achieve optimal results.
 # Please refer to the comments of the build_plain() function.
 
 # Tip: Set your terminal scrollback to unlimited so that you can scroll up
@@ -300,7 +300,7 @@ rstrt_e() {
 
 # BEFORE EXECUTING THE SCRIPT...
 #
-# Add JXL support?
+# Add optional JXL support?
 # For best results, jpeg xl has to be compiled from source. If you really need jxl
 # support in efl, please follow the instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
@@ -311,8 +311,8 @@ rstrt_e() {
 # Note: If building jxl is too much of a hassle for you, then install
 # the libjxl-dev package instead.
 #
-# Get EDI dependencies?
-# If you want edi to compile, you'll need to install the packages
+# Fetch EDI's additional dependencies?
+# If you want edi to compile, you will also need to install the packages
 # listed in the link below:
 # https://gist.github.com/batden/99a7ebdd5ba9d9e83b2446ab5f05f3dc
 #
