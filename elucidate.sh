@@ -308,7 +308,7 @@ rstrt_e() {
 # "-Devas-loaders-disabler=” whenever it's applicable.
 #
 # Note: If building jxl is too much of a hassle for you, then install
-# the libjxl-dev package instead.
+# the libjxl-dev package instead (this older version still works).
 #
 # Fetch EDI's additional dependencies?
 # If you want edi to compile, you will also need to install the packages
