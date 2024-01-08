@@ -61,7 +61,7 @@ DDCTL=2.0.0
 
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme build-essential ccache check cmake cowsay doxygen fonts-noto \
-freeglut3-dev graphviz gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
+freeglut3-dev gettext graphviz gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
 imagemagick libaom-dev libasound2-dev libavahi-client-dev libavif-dev libblkid-dev \
 libbluetooth-dev libegl1-mesa-dev libexif-dev libfontconfig-dev libdrm-dev \
 libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev libgif-dev \
@@ -172,29 +172,11 @@ selec_menu() {
   fi
 }
 
-bkp_instl() {
-  # Backup list of currently installed DEB packages.
-  if [ ! -f $DOCDIR/pbackups/installed_pkgs.log ]; then
-    mkdir -p $DOCDIR/pbackups
-
-    apt-cache dumpavail >/tmp/apt-avail
-    sudo dpkg --merge-avail /tmp/apt-avail &>/dev/null
-    rm /tmp/apt-avail
-    dpkg --get-selections >$DOCDIR/pbackups/installed_pkgs.log
-
-    # Backup list of available repositories.
-    grep -Erh ^deb /etc/apt/sources.list* >$DOCDIR/pbackups/available_repos.txt
-
-    # Backup list of currently installed snap packages.
-    snap list --all >$DOCDIR/pbackups/installed_snaps.txt
-  fi
-}
-
 # Check binary dependencies.
 bin_deps() {
   sudo apt update && sudo apt full-upgrade
 
-  if ! sudo apt install $DEPS; then
+  if ! sudo apt install --no-install-recommends $DEPS; then
     printf "\n$BLDR%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$BLDR%s %s\n" "OR DPKG DATABASE IS LOCKED."
     printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
@@ -658,7 +640,6 @@ install_now() {
   printf "\n$BLDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
   do_bsh_alias
   beep_attention
-  bkp_instl
   bin_deps
   set_p_src
   get_preq
