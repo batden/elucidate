@@ -50,7 +50,7 @@ elucidate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Type *elu* and press Tab.
+> Use auto-completion: Type *eluc* and press Tab.
 
 ## Update local repo
 
