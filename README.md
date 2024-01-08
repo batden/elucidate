@@ -6,6 +6,10 @@ Please take a look at the comments in the script before running it.
 
 *See also [eloge.sh](https://github.com/batden/eloge) (companion script).*
 
+> [!NOTE]
+> It can be useful to keep a record of the pre-existing system status, before executing the script.
+> Please check out our gist for more information.
+
 ## Get started
 
 Before using elucidate, you'll need to install git on your system.
@@ -45,7 +49,7 @@ elucidate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Just type *elu* and press Tab.
+> Use auto-completion: Type *elu* and press Tab.
 
 ## Update local repo
 
