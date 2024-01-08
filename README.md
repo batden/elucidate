@@ -8,7 +8,7 @@ Please take a look at the comments in the script before running it.
 
 > [!NOTE]
 > It can be useful to keep a record of the pre-existing system status, before proceeding with the installation.
-> 
+>
 > Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
 ## Get started
@@ -21,7 +21,7 @@ Open a terminal window and type in the following:
 sudo apt install git
 ```
 
-Next, clone the repository with:
+Next, clone the repository:
 
 ```bash
 git clone https://github.com/batden/elucidate.git .elucidate
@@ -54,7 +54,7 @@ elucidate.sh
 
 ## Update local repo
 
-Check for updates at least once a week.
+Check for updates at least once per week.
 To update the local repository, change to ~/.elucidate/ and run:
 
 ```bash
