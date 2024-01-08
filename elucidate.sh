@@ -60,7 +60,7 @@ DISTRO=$(lsb_release -sc)
 DDCTL=2.0.0
 
 # Build dependencies, recommended and script-related packages.
-DEPS="acpid arc-theme build-essential ccache check cmake cowsay doxygen fonts-noto \
+DEPS="acpid arc-theme autopoint build-essential ccache check cmake cowsay doxygen fonts-noto \
 freeglut3-dev gettext graphviz gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
 imagemagick libaom-dev libasound2-dev libavahi-client-dev libavif-dev libblkid-dev \
 libbluetooth-dev libegl1-mesa-dev libexif-dev libfontconfig-dev libdrm-dev \
