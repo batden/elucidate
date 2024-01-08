@@ -8,7 +8,7 @@ Please take a look at the comments in the script before running it.
 
 > [!NOTE]
 > It can be useful to keep a record of the pre-existing system status, before executing the script.
-> Please check out our [gist](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116) for more information.
+> Check out our [gist](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116) for more information.
 
 ## Get started
 
