@@ -7,8 +7,9 @@ Please take a look at the comments in the script before running it.
 *See also [eloge.sh](https://github.com/batden/eloge) (companion script).*
 
 > [!NOTE]
-> It can be useful to keep a record of the pre-existing system status, before executing the script.
-> Check out our [gist](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116) for more information.
+> It can be useful to keep a record of the pre-existing system status, before proceeding with the installation.
+> 
+> Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
 ## Get started
 
