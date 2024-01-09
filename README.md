@@ -11,7 +11,7 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-First, you'll need to install git on your system.
+First, you will need to install git on your system.
 
 Open a terminal window and type in the following:
 
