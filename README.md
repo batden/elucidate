@@ -4,8 +4,6 @@ A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu
 
 Please take a look at the comments in the script before running it.
 
-*See also [eloge.sh](https://github.com/batden/eloge) (companion script).*
-
 > [!NOTE]
 > It can be useful to keep a record of the pre-existing system status, before proceeding with the installation.
 >
@@ -21,7 +19,7 @@ Open a terminal window and type in the following:
 sudo apt install git
 ```
 
-Next, clone the repository:
+Next, clone the repository with:
 
 ```bash
 git clone https://github.com/batden/elucidate.git .elucidate
@@ -37,7 +35,7 @@ Navigate to the download folder and make the script executable:
 chmod +x elucidate.sh
 ```
 
-Then execute the script with:
+Then execute the script:
 
 ```bash
 ./elucidate.sh
@@ -50,7 +48,7 @@ elucidate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Type *eluc* and press Tab.
+> Use auto-completion: Type *eluc* and press the Tab key.
 
 ## Update local repo
 
@@ -60,3 +58,9 @@ To update the local repository, change to ~/.elucidate/ and run:
 ```bash
 git pull
 ```
+
+## Uninstalling
+
+You can uninstall Enlightenment and related applications from your computer at any time.
+
+See [eloge.sh](https://github.com/batden/eloge).
