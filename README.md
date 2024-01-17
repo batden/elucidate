@@ -48,7 +48,7 @@ elucidate.sh
 ```
 
 > [!TIP]
-> Use auto-completion: Type *eluc* and press the Tab key.
+> Use auto-completion: Type _eluc_ and press the Tab key.
 
 ## Update local repo
 
