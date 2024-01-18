@@ -674,7 +674,7 @@ install_now() {
   # to your Gnome Desktop, you can safely delete them if it bothers you.
 
   echo
-  cowsay "Now reboot your computer then select Enlightenment on the login screen... \
+  cowsay "Now log out of your existing session then select Enlightenment on the login screen... \
   That's All Folks!" | lolcat -a
   echo
 
