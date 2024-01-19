@@ -54,7 +54,7 @@ DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLDR=$HOME/.elucidate
 REBASEF="git config pull.rebase false"
-CONFG="./configure --prefix=$PREFIX"
+AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 DISTRO=$(lsb_release -sc)
 DDCTL=2.0.0
@@ -585,7 +585,7 @@ get_preq() {
 
   tar xzvf v$DDCTL.tar.gz -C $ESRCDIR
   cd $ESRCDIR/ddcutil-$DDCTL
-  $CONFG
+  $AUTGN
   make
   $SMIL
   sudo ldconfig
