@@ -56,6 +56,7 @@ SCRFLDR=$HOME/.elucidate
 REBASEF="git config pull.rebase false"
 AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
+SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
 DDCTL=2.0.0
 
