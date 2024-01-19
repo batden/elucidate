@@ -62,8 +62,8 @@ DDCTL=2.0.0
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme automake build-essential ccache check cmake cowsay doxygen fonts-noto \
 freeglut3-dev gettext graphviz gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly hwdata \
-i2c-tools imagemagick libaom-dev libasound2-dev libavahi-client-dev libavif-dev libblkid-dev \
-libbluetooth-dev libegl1-mesa-dev libexif-dev libfontconfig-dev libdrm-dev \
+i2c-tools imagemagick libaom-dev libasound2-dev libavahi-client-dev libavif-dev \
+libblkid-dev libbluetooth-dev libegl1-mesa-dev libexif-dev libfontconfig-dev libdrm-dev \
 libfreetype-dev libfribidi-dev libgbm-dev libgeoclue-2-dev libgif-dev \
 libgraphviz-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
 libharfbuzz-dev libheif-dev libi2c-dev libibus-1.0-dev libinput-dev libinput-tools \
