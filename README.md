@@ -50,6 +50,12 @@ elucidate.sh
 > [!TIP]
 > Use auto-completion: Type _eluc_ and press the Tab key.
 
+That's it.
+
+You can uninstall Enlightenment and related applications from your computer at any time.
+
+See [eloge.sh](https://github.com/batden/eloge).
+
 ## Update local repo
 
 To update the local repository, change to ~/.elucidate/ and run:
@@ -58,12 +64,6 @@ To update the local repository, change to ~/.elucidate/ and run:
 git pull
 ```
 
-## Uninstalling
-
-You can uninstall Enlightenment and related applications from your computer at any time.
-
-See [eloge.sh](https://github.com/batden/eloge).
-
-### In the picture...
+## In the picture
 
 ![GitHub Image](/images/enlightened_desktop.jpg)
