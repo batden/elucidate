@@ -63,3 +63,7 @@ git pull
 You can uninstall Enlightenment and related applications from your computer at any time.
 
 See [eloge.sh](https://github.com/batden/eloge).
+
+### In the picture...
+
+![GitHub Image](/images/enlightened_desktop.jpg)
