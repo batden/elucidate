@@ -690,7 +690,8 @@ release_go() {
   clear
   printf "\n$BLDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
-  cp -f $SCRFLDR/elucidate.sh $HOME/.local/bin
+  # Check for local repo updates of the script folder first.
+  cp -f elucidate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elucidate.sh
   sleep 1
 
