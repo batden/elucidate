@@ -722,7 +722,8 @@ wayld_go() {
   clear
   printf "\n$BLDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  cp -f $SCRFLDR/elucidate.sh $HOME/.local/bin
+  cd $SCRFLDR && git pull &>/dev/null
+  cp -f elucidate.sh $HOME/.local/bin
   chmod +x $HOME/.local/bin/elucidate.sh
   sleep 1
 
