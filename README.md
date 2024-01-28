@@ -56,7 +56,7 @@ You can uninstall Enlightenment and related applications from your computer at a
 
 See [eloge.sh](https://github.com/batden/eloge).
 
-# Update local repo
+## Update local repo
 
 To update the local repository manually, change to ~/.elucidate/ and run:
 
