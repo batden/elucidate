@@ -58,7 +58,7 @@ AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
-DDCTL=2.0.0
+DDCTL=2.1.4
 
 # Build dependencies, recommended and script-related packages.
 DEPS="acpid arc-theme automake build-essential ccache check cmake cowsay doxygen fonts-noto \
