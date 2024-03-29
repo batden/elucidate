@@ -1,7 +1,7 @@
 # elucidate
 
 > [!WARNING]
-> Attention Upgrading noble systems.
+> Attention upgrading noble systems.
 >
 > See: https://ubuntuforums.org/showthread.php?t=2496457
 > 
