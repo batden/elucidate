@@ -1,5 +1,12 @@
 # elucidate
 
+> [!WARNING]
+> Attention Upgrading noble systems.
+>
+> See: https://ubuntuforums.org/showthread.php?t=2496457
+> 
+> Do not execute the script for now.
+
 A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu 24.04 LTS.
 
 Please take a look at the comments in the script before running it.
