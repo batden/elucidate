@@ -357,6 +357,7 @@ build_plain() {
 
 rebuild_optim() {
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
+
   bin_deps
   e_tokens
 
@@ -432,13 +433,14 @@ rebuild_optim() {
 }
 
 rebuild_wayld() {
+  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
+
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "\n$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
 
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
   bin_deps
   e_tokens
 
@@ -601,8 +603,8 @@ set_p_src() {
 # Fetch and install prerequisites.
 get_preq() {
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
-  printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
 
+  printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
   cd $DLDIR
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
