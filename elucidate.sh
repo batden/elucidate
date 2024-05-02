@@ -50,6 +50,7 @@ LOWP="\e[2;35m" # Low intensity purple text.
 LOWY="\e[2;33m" # Low intensity yellow text.
 OFF="\e[0m"     # Turn off ANSI colors and formatting.
 
+PREFIX=/usr/local
 DLDIR=$(xdg-user-dir DOWNLOAD)
 DOCDIR=$(xdg-user-dir DOCUMENTS)
 SCRFLDR=$HOME/.elucidate
