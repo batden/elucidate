@@ -320,15 +320,14 @@ build_plain() {
 
     case $I in
     efl)
-      if [ $DISTRO == noble ]; then
-        meson setup build -Dbuildtype=plain \
-          -Dfb=true \
-          -Dbuild-tests=false \
-          -Dlua-interpreter=lua \
-          -Devas-loaders-disabler=jxl \
-          -Dglib=true
-        ninja -C build || mng_err
-      fi
+      meson setup build -Dbuildtype=plain \
+        -Dfb=true \
+        -Dbuild-tests=false \
+        -Dlua-interpreter=lua \
+        -Devas-loaders-disabler=jxl \
+        -Dglib=true \
+        -Ddocs=true
+      ninja -C build || mng_err
       ;;
     enlightenment)
       meson setup build -Dbuildtype=plain
@@ -384,24 +383,21 @@ rebuild_optim() {
 
     case $I in
     efl)
-      if [ $DISTRO == noble ]; then
-        sudo chown $USER build/.ninja*
-        meson setup --reconfigure build -Dbuildtype=release \
-          -Dnative-arch-optimization=true \
-          -Dfb=true \
-          -Dharfbuzz=true \
-          -Dlua-interpreter=lua \
-          -Delua=true \
-          -Dbindings=lua,cxx \
-          -Devas-loaders-disabler=jxl \
-          -Dglib=true \
-          -Dopengl=full \
-          -Ddrm=false \
-          -Dwl=false \
-          -Dbuild-tests=false \
-          -Ddocs=true
-        ninja -C build || mng_err
-      fi
+      sudo chown $USER build/.ninja*
+      meson setup --reconfigure build -Dbuildtype=release \
+        -Dnative-arch-optimization=true \
+        -Dfb=true \
+        -Dharfbuzz=true \
+        -Dlua-interpreter=lua \
+        -Delua=true \
+        -Dbindings=lua,cxx \
+        -Devas-loaders-disabler=jxl \
+        -Dglib=true \
+        -Dopengl=full \
+        -Ddrm=false \
+        -Dwl=false \
+        -Dbuild-tests=false
+      ninja -C build || mng_err
       ;;
     enlightenment)
       sudo chown $USER build/.ninja*
@@ -468,24 +464,21 @@ rebuild_wayld() {
 
     case $I in
     efl)
-      if [ $DISTRO == noble ]; then
-        sudo chown $USER build/.ninja*
-        meson setup --reconfigure build -Dbuildtype=release \
-          -Dnative-arch-optimization=true \
-          -Dfb=true \
-          -Dharfbuzz=true \
-          -Dlua-interpreter=lua \
-          -Delua=true \
-          -Dbindings=lua,cxx \
-          -Devas-loaders-disabler=jxl \
-          -Dglib=true \
-          -Ddrm=true \
-          -Dwl=true \
-          -Dopengl=es-egl \
-          -Dbuild-tests=false \
-          -Ddocs=true
-        ninja -C build || mng_err
-      fi
+      sudo chown $USER build/.ninja*
+      meson setup --reconfigure build -Dbuildtype=release \
+        -Dnative-arch-optimization=true \
+        -Dfb=true \
+        -Dharfbuzz=true \
+        -Dlua-interpreter=lua \
+        -Delua=true \
+        -Dbindings=lua,cxx \
+        -Devas-loaders-disabler=jxl \
+        -Dglib=true \
+        -Ddrm=true \
+        -Dwl=true \
+        -Dopengl=es-egl \
+        -Dbuild-tests=false
+      ninja -C build || mng_err
       ;;
     enlightenment)
       sudo chown $USER build/.ninja*
