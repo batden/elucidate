@@ -396,7 +396,8 @@ rebuild_optim() {
         -Dopengl=full \
         -Ddrm=false \
         -Dwl=false \
-        -Dbuild-tests=false
+        -Dbuild-tests=false \
+        -Ddocs=true
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -477,7 +478,8 @@ rebuild_wayld() {
         -Ddrm=true \
         -Dwl=true \
         -Dopengl=es-egl \
-        -Dbuild-tests=false
+        -Dbuild-tests=false \
+        -Ddocs=true
       ninja -C build || mng_err
       ;;
     enlightenment)
@@ -681,6 +683,10 @@ install_now() {
 
   cnt_dir
   build_plain
+
+  printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
+  cd $ESRCDIR/enlighten/efl/build/doc
+  doxygen
 
   sudo mkdir -p /etc/enlightenment
   do_link
