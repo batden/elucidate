@@ -685,7 +685,7 @@ install_now() {
   build_plain
 
   # Doxygen outputs HTML-based (as well as LaTeX-formatted) documentation. Click on enlighten/efl/build/html/index.html
-  # to open the HTML documentation.
+  # to open the HTML documentation in your browser.
   printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
   cd $ESRCDIR/enlighten/efl/build/doc
   doxygen
