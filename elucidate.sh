@@ -26,9 +26,9 @@
 # installations of EFL, Enlightenment and related applications before running
 # this script.
 
-# ELUCIDATE.SH is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License,
+# ELUCIDATE.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
-# See https://creativecommons.org/licenses/by-sa/4.0/
+# See https://creativecommons.org/licenses/by/4.0/
 
 # Got a GitHub account? Please consider starring our repositories to show your support.
 # Thank you!
