@@ -38,17 +38,20 @@
 # ---------------
 # (These variables are not available to be used outside of this script.)
 
-BOLD="\e[1m"    # Bold text.
-ITAL="\e[3m"    # Italic text.
-BLDR="\e[1;31m" # Bold red text.
-BLDG="\e[1;32m" # Bold green text.
-BRTC="\e[1;96m" # Bright cyan text.
-BLDP="\e[1;35m" # Bold purple text.
-BLDY="\e[1;33m" # Bold yellow text.
-LOWG="\e[2;32m" # Low intensity green text.
-LOWP="\e[2;35m" # Low intensity purple text.
-LOWY="\e[2;33m" # Low intensity yellow text.
-OFF="\e[0m"     # Turn off ANSI colors and formatting.
+BOLD="\e[1m"   # Bold text.
+ITALIC="\e[3m" # Italic text.
+OFF="\e[0m"    # Turn off ANSI colors and formatting
+
+GREEN_BRIGHT="\e[1;38;5;118m"
+MAGENTA_BRIGHT="\e[1;38;5;201m"
+ORANGE_BRIGHT="\e[1;38;5;208m"
+YELLOW_BRIGHT="\e[1;38;5;226m"
+BLUE_BRIGHT="\e[1;38;5;74m"
+RED_BRIGHT="\e[1;38;5;1m"
+
+GREEN_DIM="\e[2;38;5;118m"
+MAGENTA_DIM="\e[2;38;5;201m"
+ORANGE_DIM="\e[2;38;5;208m"
 
 PREFIX=/usr/local
 DLDIR=$(xdg-user-dir DOWNLOAD)
@@ -154,11 +157,11 @@ beep_ok() {
 menu_selec() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $BLDG%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
-    printf "2  $LOWP%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode"
-    printf "3  $LOWY%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support"
+    printf "1  $GREEN_BRIGHT%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
+    printf "2  $MAGENTA_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode"
+    printf "3  $ORANGE_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support"
 
-    sleep 1 && printf "$ITAL%s $OFF%s\n\n" "Or press Ctrl+C to quit."
+    sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
   fi
 }
@@ -166,11 +169,11 @@ menu_selec() {
 selec_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $LOWG%s $OFF%s\n\n" "Install the Enlightenment ecosystem now"
-    printf "2  $BLDP%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
-    printf "3  $BLDY%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
+    printf "1  $GREEN_DIM%s $OFF%s\n\n" "Install the Enlightenment ecosystem now"
+    printf "2  $MAGENTA_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
+    printf "3  $ORANGE_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
 
-    sleep 1 && printf "$ITAL%s $OFF%s\n\n" "Or press Ctrl+C to quit."
+    sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
   fi
 }
@@ -178,9 +181,9 @@ selec_menu() {
 # Check binary dependencies.
 bin_deps() {
   if ! sudo apt install --no-install-recommends $DEPS; then
-    printf "\n$BLDR%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
-    printf "$BLDR%s %s\n" "OR DPKG DATABASE IS LOCKED."
-    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$RED_BRIGHT%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
+    printf "$RED_BRIGHT%s %s\n" "OR DPKG DATABASE IS LOCKED."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
   fi
@@ -191,8 +194,8 @@ cnt_dir() {
   COUNT=$(find . -mindepth 1 -maxdepth 1 -type d | wc -l)
 
   if [ ! -d efl ] || [ ! -d enlightenment ]; then
-    printf "\n$BLDR%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
-    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$RED_BRIGHT%s %s\n" "FAILED TO DOWNLOAD MAIN COMPONENT."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
     # You can try downloading the missing file(s) manually (see CLONEFL or CLONENL), then relaunch
@@ -203,19 +206,19 @@ cnt_dir() {
 
   case $COUNT in
   15)
-    printf "$BLDG%s $OFF%s\n\n" "All programs have been downloaded successfully."
+    printf "$GREEN_BRIGHT%s $OFF%s\n\n" "All programs have been downloaded successfully."
     beep_dl_complete
     sleep 2
     ;;
   0)
-    printf "\n$BLDR%s %s\n" "OOPS! SOMETHING WENT WRONG."
-    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$RED_BRIGHT%s %s\n" "OOPS! SOMETHING WENT WRONG."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
     ;;
   *)
-    printf "\n$BLDY%s %s\n" "WARNING: ONLY $COUNT OF 15 PROGRAMS HAVE BEEN DOWNLOADED!"
-    printf "\n$BLDY%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
+    printf "\n$YELLOW_BRIGHT%s %s\n" "WARNING: ONLY $COUNT OF 15 PROGRAMS HAVE BEEN DOWNLOADED!"
+    printf "\n$YELLOW_BRIGHT%s $OFF%s\n\n" "WAIT 12 SECONDS OR HIT CTRL+C TO EXIT NOW."
     beep_attention
     sleep 12
     ;;
@@ -223,7 +226,7 @@ cnt_dir() {
 }
 
 mng_err() {
-  printf "\n$BLDR%s $OFF%s\n\n" "BUILD ERROR——TRY AGAIN LATER."
+  printf "\n$RED_BRIGHT%s $OFF%s\n\n" "BUILD ERROR——TRY AGAIN LATER."
   beep_exit
   exit 1
 }
@@ -273,10 +276,10 @@ e_tokens() {
       e_bkp
       ;;
     n | N)
-      printf "\n$ITAL%s $OFF%s\n\n" "(no backup made... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(no backup made... OK)"
       ;;
     *)
-      printf "\n$ITAL%s $OFF%s\n\n" "(no backup made... OK)"
+      printf "\n$ITALIC%s $OFF%s\n\n" "(no backup made... OK)"
       ;;
     esac
   fi
@@ -435,7 +438,7 @@ rebuild_wayld() {
   ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
 
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
-    printf "\n$BLDR%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
+    printf "\n$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
     beep_exit
     exit 1
   fi
@@ -523,24 +526,24 @@ do_tests() {
   printf "\n\n$BOLD%s $OFF%s\n" "System check..."
 
   if systemd-detect-virt -q --container; then
-    printf "\n$BLDR%s %s\n" "ELUCIDATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
-    printf "$BLDR%s $OFF%s\n\n" "SCRIPT ABORTED."
+    printf "\n$RED_BRIGHT%s %s\n" "ELUCIDATE IS NOT INTENDED FOR USE INSIDE CONTAINERS."
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
   fi
 
   if [ $DISTRO == noble ]; then
-    printf "\n$BLDG%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
+    printf "\n$GREEN_BRIGHT%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
     sleep 1
   else
-    printf "\n$BLDR%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
+    printf "\n$RED_BRIGHT%s $OFF%s\n\n" "UNSUPPORTED OPERATING SYSTEM [ $(lsb_release -d | cut -f2) ]."
     beep_exit
     exit 1
   fi
 
   if ! git ls-remote http://git.enlightenment.org/enlightenment/efl.git HEAD &>/dev/null; then
-    printf "\n$BLDR%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
-    printf "$BLDR%s $OFF%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
+    printf "\n$RED_BRIGHT%s %s\n" "REMOTE HOST IS UNREACHABLE——TRY AGAIN LATER"
+    printf "$RED_BRIGHT%s $OFF%s\n\n" "OR CHECK YOUR INTERNET CONNECTION."
     beep_exit
     exit 1
   fi
@@ -645,7 +648,7 @@ do_link() {
 
 install_now() {
   clear
-  printf "\n$BLDG%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
+  printf "\n$GREEN_BRIGHT%s $OFF%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
   do_bsh_alias
   beep_attention
   bin_deps
@@ -710,9 +713,9 @@ install_now() {
   printf "\n%s\n\n" "All done!"
   beep_ok
 
-  printf "\n\n$BRTC%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$BRTC%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
-  printf "\n$BRTC%s $OFF%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
+  printf "\n\n$BLUE_BRIGHT%s %s" "INITIAL SETUP WIZARD TIPS:"
+  printf "\n$BLUE_BRIGHT%s %s" '“Update checking” —— you can disable this feature because it serves no useful purpose.'
+  printf "\n$BLUE_BRIGHT%s $OFF%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Gnome Desktop, you can safely delete them if it bothers you.
@@ -729,7 +732,7 @@ install_now() {
 
 release_go() {
   clear
-  printf "\n$BLDP%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
+  printf "\n$MAGENTA_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
   # Check for available updates of the script folder first.
   cd $SCRFLDR && git pull &>/dev/null
@@ -761,7 +764,7 @@ release_go() {
 
 wayld_go() {
   clear
-  printf "\n$BLDY%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
+  printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
   cd $SCRFLDR && git pull &>/dev/null
   cp -f elucidate.sh $HOME/.local/bin
@@ -800,7 +803,7 @@ wayld_go() {
 # Display the selection menu...
 #
 lo() {
-  trap '{ printf "\n$BLDR%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
+  trap '{ printf "\n$RED_BRIGHT%s $OFF%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' INT
 
   INPUT=0
   printf "\n$BOLD%s $OFF%s\n" "Please enter the number of your choice:"
