@@ -799,6 +799,7 @@ wayld_go() {
 
 chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
+    printf "\n$BOLD%s $OFF%s\n\n" "Installing pv command..."
     sudo apt install -y pv
   fi
 }
