@@ -797,6 +797,12 @@ wayld_go() {
   exit 0
 }
 
+chk_pv() {
+  if [ ! -x /usr/bin/pv ]; then
+    sudo apt install -y pv
+  fi
+}
+
 # Lo and behold (“bhd”)!
 #
 # Display the selection menu...
@@ -831,5 +837,6 @@ bhd() {
   fi
 }
 
+chk_pv
 lo
 bhd
