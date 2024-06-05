@@ -80,7 +80,7 @@ libunibreak-dev libunwind-dev libusb-1.0-0-dev libwebp-dev \
 libxcb-keysyms1-dev libxcursor-dev libxinerama-dev libxkbcommon-x11-dev \
 libxkbfile-dev lxmenu-data libxrandr-dev libxss-dev libxtst-dev libyuv-dev \
 lolcat manpages-dev manpages-posix-dev meson ninja-build papirus-icon-theme \
-texlive-base texlive-font-utils unity-greeter-badges valgrind \
+pv texlive-base texlive-font-utils unity-greeter-badges valgrind \
 wayland-protocols wmctrl xdotool"
 
 # Latest source code available.
@@ -156,9 +156,9 @@ beep_ok() {
 menu_selec() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $GREEN_BRIGHT%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now"
-    printf "2  $MAGENTA_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode"
-    printf "3  $ORANGE_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support"
+    printf "1  $GREEN_BRIGHT%s $OFF%s\n\n" "INSTALL the Enlightenment ecosystem now" | pv -qL 20
+    printf "2  $MAGENTA_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem in release mode" | pv -qL 20
+    printf "3  $ORANGE_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 20
 
     sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
@@ -168,9 +168,9 @@ menu_selec() {
 selec_menu() {
   if [ $INPUT -lt 1 ]; then
     echo
-    printf "1  $GREEN_DIM%s $OFF%s\n\n" "Install the Enlightenment ecosystem now"
-    printf "2  $MAGENTA_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode"
-    printf "3  $ORANGE_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support"
+    printf "1  $GREEN_DIM%s $OFF%s\n\n" "Install the Enlightenment ecosystem now" | pv -qL 20
+    printf "2  $MAGENTA_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem in RELEASE mode" | pv -qL 20
+    printf "3  $ORANGE_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 20
 
     sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
     read INPUT
