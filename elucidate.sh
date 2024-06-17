@@ -180,7 +180,7 @@ selec_menu() {
 
 # Check binary dependencies.
 bin_deps() {
-  if ! sudo apt install --no-install-recommends $DEPS; then
+  if ! sudo apt install --no-install-recommends "$DEPS"; then
     printf "\n$RED_BRIGHT%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$RED_BRIGHT%s %s\n" "OR DPKG DATABASE IS LOCKED."
     printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
@@ -264,7 +264,7 @@ e_bkp() {
 e_tokens() {
   date +%s >>"$HOME/.cache/ebuilds/etokens"
 
-  TOKEN=$(wc -l <$HOME/.cache/ebuilds/etokens)
+  TOKEN=$(wc -l <"$HOME/.cache/ebuilds/etokens")
 
   if [ "$TOKEN" -gt 3 ]; then
     echo
@@ -359,7 +359,7 @@ build_plain() {
 }
 
 rebuild_optim() {
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat "$HOME/.cache/ebuilds/storepath")
 
   bin_deps
   e_tokens
@@ -621,7 +621,7 @@ get_preq() {
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
 
   tar xzvf v$DDCTL.tar.gz -C "$ESRCDIR"
-  cd $ESRCDIR/ddcutil-$DDCTL
+  cd "$ESRCDIR/ddcutil-$DDCTL"
   $AUTGN
   make
   $SMIL
@@ -629,7 +629,7 @@ get_preq() {
   rm -rf "$DLDIR/v$DDCTL.tar.gz"
   echo
 
-  cd $ESRCDIR
+  cd "$ESRCDIR"
   git clone https://github.com/Samsung/rlottie.git
   cd "$ESRCDIR/rlottie"
   meson setup build -Dbuildtype=plain \
