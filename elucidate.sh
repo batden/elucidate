@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC1091 disable=SC2164
 
 # This script allows you to easily and safely install Enlightenment, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
@@ -161,7 +162,7 @@ menu_selec() {
     printf "3  $ORANGE_DIM%s $OFF%s\n\n" "Update and rebuild the ecosystem with Wayland support" | pv -qL 30
 
     sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
-    read INPUT
+    read -r INPUT
   fi
 }
 
@@ -173,7 +174,7 @@ selec_menu() {
     printf "3  $ORANGE_BRIGHT%s $OFF%s\n\n" "Update and rebuild the ecosystem with WAYLAND support" | pv -qL 20
 
     sleep 1 && printf "$ITALIC%s $OFF%s\n\n" "Or press Ctrl+C to quit."
-    read INPUT
+    read -r INPUT
   fi
 }
 
@@ -244,24 +245,24 @@ mng_err() {
 e_bkp() {
   TSTAMP=$(date +%s)
 
-  if [ -d $DOCDIR/ebackups ]; then
-    rm -rf $DOCDIR/ebackups
-    mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
-      cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP &>/dev/null
+  if [ -d "$DOCDIR/ebackups" ]; then
+    rm -rf "$DOCDIR/ebackups"
+    mkdir -p "$DOCDIR/ebackups/E_$TSTAMP" && mkdir -p "$DOCDIR/ebackups/ETERM_$TSTAMP" &&
+      cp -aR "$HOME/.elementary" "$DOCDIR/ebackups/E_$TSTAMP" &&
+      cp -aR "$HOME/.e" "$DOCDIR/ebackups/E_$TSTAMP" &&
+      cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
     sleep 2
   else
-    mkdir -p $DOCDIR/ebackups/E_$TSTAMP && mkdir -p $DOCDIR/ebackups/ETERM_$TSTAMP &&
-      cp -aR $HOME/.elementary $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.e $DOCDIR/ebackups/E_$TSTAMP &&
-      cp -aR $HOME/.config/terminology $DOCDIR/ebackups/ETERM_$TSTAMP &>/dev/null
+    mkdir -p "$DOCDIR/ebackups/E_$TSTAMP" && mkdir -p "$DOCDIR/ebackups/ETERM_$TSTAMP" &&
+      cp -aR "$HOME/.elementary" "$DOCDIR/ebackups/E_$TSTAMP" &&
+      cp -aR "$HOME/.e" "$DOCDIR/ebackups/E_$TSTAMP" &&
+      cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
     sleep 2
   fi
 }
 
 e_tokens() {
-  echo $(date +%s) >>$HOME/.cache/ebuilds/etokens
+  date +%s >>"$HOME/.cache/ebuilds/etokens"
 
   TOKEN=$(wc -l <$HOME/.cache/ebuilds/etokens)
 
@@ -269,7 +270,7 @@ e_tokens() {
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
-    read -t 12 -p "Do you want to back up your Enlightenment and Terminology settings now? [y/N] " answer
+    read -r -t 12 -p "Do you want to back up your Enlightenment and Terminology settings now? [y/N] " answer
     case $answer in
     y | Y)
       e_bkp
@@ -316,7 +317,7 @@ build_plain() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRCDIR/enlighten/$I
+    cd "$ESRCDIR/enlighten/$I"
     printf "\n$BOLD%s $OFF%s\n\n" "Building $I..."
 
     case $I in
@@ -363,12 +364,12 @@ rebuild_optim() {
   bin_deps
   e_tokens
 
-  cd $ESRCDIR/rlottie
+  cd "$ESRCDIR/rlottie"
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
   echo
-  sudo chown $USER build/.ninja*
+  sudo chown "$USER" build/.ninja*
   meson setup --reconfigure build -Dbuildtype=release \
     -Dexample=false
   ninja -C build
@@ -377,14 +378,14 @@ rebuild_optim() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRCDIR/enlighten/$I
+    cd "$ESRCDIR/enlighten/$I"
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
 
     case $I in
     efl)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dnative-arch-optimization=true \
         -Dfb=true \
@@ -402,26 +403,26 @@ rebuild_optim() {
       ninja -C build || mng_err
       ;;
     enlightenment)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dwl=false
       ninja -C build || mng_err
       ;;
     edi)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     eflete)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Denable-audio=true -Dwerror=false
       ninja -C build
       ;;
     *)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release
       ninja -C build
       ;;
@@ -434,7 +435,7 @@ rebuild_optim() {
 }
 
 rebuild_wayld() {
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat "$HOME/.cache/ebuilds/storepath")
 
   if [ "$XDG_SESSION_TYPE" == "tty" ] && [ "$XDG_CURRENT_DESKTOP" == "Enlightenment" ]; then
     printf "\n$RED_BRIGHT%s $OFF%s\n\n" "PLEASE LOG IN TO THE DEFAULT DESKTOP ENVIRONMENT TO EXECUTE THIS SCRIPT."
@@ -445,12 +446,12 @@ rebuild_wayld() {
   bin_deps
   e_tokens
 
-  cd $ESRCDIR/rlottie
+  cd "$ESRCDIR/rlottie"
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
   git reset --hard &>/dev/null
   $REBASEF && git pull
   echo
-  sudo chown $USER build/.ninja*
+  sudo chown "$USER" build/.ninja*
   meson setup --reconfigure build -Dbuildtype=release \
     -Dexample=false
   ninja -C build
@@ -459,14 +460,14 @@ rebuild_wayld() {
   sudo ldconfig
 
   for I in $PROG_MBS; do
-    cd $ESRCDIR/enlighten/$I
+    cd "$ESRCDIR/enlighten/$I"
     printf "\n$BOLD%s $OFF%s\n\n" "Updating $I..."
     git reset --hard &>/dev/null
     $REBASEF && git pull
 
     case $I in
     efl)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dnative-arch-optimization=true \
         -Dfb=true \
@@ -484,26 +485,26 @@ rebuild_wayld() {
       ninja -C build || mng_err
       ;;
     enlightenment)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dwl=true
       ninja -C build || mng_err
       ;;
     edi)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Dlibclang-headerdir=/usr/lib/llvm-11/include \
         -Dlibclang-libdir=/usr/lib/llvm-11/lib
       ninja -C build
       ;;
     eflete)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
         -Denable-audio=true -Dwerror=false
       ninja -C build
       ;;
     *)
-      sudo chown $USER build/.ninja*
+      sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release
       ninja -C build
       ;;
@@ -531,7 +532,7 @@ do_tests() {
     exit 1
   fi
 
-  if [ $DISTRO == noble ]; then
+  if [ "$DISTRO" == noble ]; then
     printf "\n$GREEN_BRIGHT%s $OFF%s\n\n" "Ubuntu ${DISTRO^}... OK"
     sleep 1
   else
@@ -557,15 +558,15 @@ do_tests() {
 }
 
 do_bsh_alias() {
-  if [ -f $HOME/.bash_aliases ]; then
-    mv -vb $HOME/.bash_aliases $HOME/.bash_aliases_bak
+  if [ -f "$HOME/.bash_aliases" ]; then
+    mv -vb "$HOME/.bash_aliases" "$HOME/.bash_aliases_bak"
     echo
-    touch $HOME/.bash_aliases
+    touch "$HOME/.bash_aliases"
   else
-    touch $HOME/.bash_aliases
+    touch "$HOME/.bash_aliases"
   fi
 
-  cat >$HOME/.bash_aliases <<EOF
+  cat >"$HOME/.bash_aliases" <<EOF
     # ---------------------
     # ENVIRONMENT VARIABLES
     # ---------------------
@@ -589,7 +590,7 @@ do_bsh_alias() {
     fi
 EOF
 
-  source $HOME/.bash_aliases
+  source "$HOME/.bash_aliases"
 }
 
 set_p_src() {
@@ -599,38 +600,38 @@ set_p_src() {
   # Do not append a trailing slash (/) to the end of the path prefix,
   # and double-check the path you entered before validating.
   #
-  read -p "Please enter a path for the Enlightenment source folders \
+  read -r -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
   mkdir -p "$mypath"/sources
   SRCDIR="$mypath"/sources
-  echo $SRCDIR >$HOME/.cache/ebuilds/storepath
+  echo "$SRCDIR" >"$HOME/.cache/ebuilds/storepath"
   printf "\n%s\n\n" "You have chosen: $SRCDIR"
   sleep 2
 }
 
 # Fetch and install prerequisites.
 get_preq() {
-  ESRCDIR=$(cat $HOME/.cache/ebuilds/storepath)
+  ESRCDIR=$(cat "$HOME/.cache/ebuilds/storepath")
 
   printf "\n\n$BOLD%s $OFF%s\n\n" "Installing prerequisites..."
-  cd $DLDIR
+  cd "$DLDIR"
 
   #  See the ddcutil man page or visit https://www.ddcutil.com/commands/ for more information.
   #
   wget https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
 
-  tar xzvf v$DDCTL.tar.gz -C $ESRCDIR
+  tar xzvf v$DDCTL.tar.gz -C "$ESRCDIR"
   cd $ESRCDIR/ddcutil-$DDCTL
   $AUTGN
   make
   $SMIL
   sudo ldconfig
-  rm -rf $DLDIR/v$DDCTL.tar.gz
+  rm -rf "$DLDIR/v$DDCTL.tar.gz"
   echo
 
   cd $ESRCDIR
   git clone https://github.com/Samsung/rlottie.git
-  cd $ESRCDIR/rlottie
+  cd "$ESRCDIR/rlottie"
   meson setup build -Dbuildtype=plain \
     -Dexample=false
   ninja -C build
@@ -654,9 +655,9 @@ install_now() {
   set_p_src
   get_preq
 
-  cd $HOME
-  mkdir -p $ESRCDIR/enlighten
-  cd $ESRCDIR/enlighten
+  cd "$HOME"
+  mkdir -p "$ESRCDIR/enlighten"
+  cd "$ESRCDIR/enlighten"
 
   printf "\n\n$BOLD%s $OFF%s\n\n" "Fetching source code from the Enlightenment git repositories..."
   $CLONEFL
@@ -697,7 +698,7 @@ install_now() {
   # to open the HTML documentation in your browser.
   #
   printf "\n\n$BOLD%s $OFF%s\n\n" "Generating the documentation for EFL..."
-  cd $ESRCDIR/enlighten/efl/build/doc
+  cd "$ESRCDIR/enlighten/efl/build/doc"
   doxygen
 
   sudo mkdir -p /etc/enlightenment
@@ -707,7 +708,7 @@ install_now() {
     /usr/share/xsessions/enlightenment.desktop
 
   # Protect this file from accidental deletion.
-  sudo chattr +i $HOME/.cache/ebuilds/storepath
+  sudo chattr +i "$HOME/.cache/ebuilds/storepath"
 
   printf "\n%s\n\n" "All done!"
   beep_ok
@@ -724,7 +725,7 @@ install_now() {
   That's All Folks!" | lolcat -a
   echo
 
-  cp -f $DLDIR/elucidate.sh $HOME/.local/bin
+  cp -f "$DLDIR/elucidate.sh" "$HOME/.local/bin"
 
   exit 0
 }
@@ -734,9 +735,9 @@ release_go() {
   printf "\n$MAGENTA_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON XORG SERVER *"
 
   # Check for available updates of the script folder first.
-  cd $SCRFLDR && git pull &>/dev/null
-  cp -f elucidate.sh $HOME/.local/bin
-  chmod +x $HOME/.local/bin/elucidate.sh
+  cd "$SCRFLDR" && git pull &>/dev/null
+  cp -f elucidate.sh "$HOME/.local/bin"
+  chmod +x "$HOME/.local/bin/elucidate.sh"
   sleep 1
 
   rebuild_optim
@@ -765,9 +766,9 @@ wayld_go() {
   clear
   printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
 
-  cd $SCRFLDR && git pull &>/dev/null
-  cp -f elucidate.sh $HOME/.local/bin
-  chmod +x $HOME/.local/bin/elucidate.sh
+  cd "$SCRFLDR" && git pull &>/dev/null
+  cp -f elucidate.sh "$HOME/.local/bin"
+  chmod +x "$HOME/.local/bin/elucidate.sh"
   sleep 1
 
   rebuild_wayld
@@ -823,13 +824,13 @@ lo() {
 
 # and get the user's choice.
 bhd() {
-  if [ $INPUT == 1 ]; then
+  if [ "$INPUT" == 1 ]; then
     do_tests
     install_now
-  elif [ $INPUT == 2 ]; then
+  elif [ "$INPUT" == 2 ]; then
     do_tests
     release_go
-  elif [ $INPUT == 3 ]; then
+  elif [ "$INPUT" == 3 ]; then
     do_tests
     wayld_go
   else
