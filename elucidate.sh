@@ -258,7 +258,7 @@ selec_menu() {
 
 # Check binary dependencies.
 bin_deps() {
-  if ! sudo apt install "${DEPS[@]}"; then
+  if ! sudo apt install --no-install-recommends "${DEPS[@]}"; then
     printf "\n$RED_BRIGHT%s %s\n" "CONFLICTING OR MISSING DEB PACKAGES"
     printf "$RED_BRIGHT%s %s\n" "OR DPKG DATABASE IS LOCKED."
     printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
