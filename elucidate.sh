@@ -27,6 +27,8 @@
 # installations of EFL, Enlightenment and related applications before running
 # this script.
 
+# Also note that ELUCIDATE.SH is not compatible with non-standard package managers like Nix.
+
 # ELUCIDATE.SH is licensed under a Creative Commons Attribution 4.0 International License,
 # in memory of Aaron Swartz.
 # See https://creativecommons.org/licenses/by/4.0/
