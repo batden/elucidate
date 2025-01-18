@@ -58,4 +58,4 @@ See [eloge.sh](https://github.com/batden/eloge).
 
 ## In the picture
 
-![GitHub Image](/images/enlightened_desktop.jpg)
+![GitHub Image](/images/enlightenment_desktop.jpg)
