@@ -844,7 +844,8 @@ release_go() {
 wayld_go() {
   clear
   printf "\n$ORANGE_BRIGHT%s $OFF%s\n\n" "* UPDATING ENLIGHTENMENT DESKTOP ENVIRONMENT: RELEASE BUILD ON WAYLAND *"
-
+  
+  # Check for available updates of the script folder first.
   cd "$SCRFLDR" && git pull &>/dev/null
   cp -f elucidate.sh "$HOME/.local/bin"
   chmod +x "$HOME/.local/bin/elucidate.sh"
