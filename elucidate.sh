@@ -198,10 +198,6 @@ enlightenment-module-penguins
 enlightenment-module-places
 eflete"
 
-# Bug reporting: Before using this script, uncomment the following (remove the leading # character)
-# to force messages to display in English during the build process.
-# export LC_ALL=C
-
 # ---------
 # FUNCTIONS
 # ---------
