@@ -274,12 +274,12 @@ cnt_dir() {
     printf "$RED_BRIGHT%s $OFF%s\n\n" "SCRIPT ABORTED."
     beep_exit
     exit 1
-    #
-    # Tip: You can try downloading the missing file(s) manually (see CLONEFL or CLONENL), then
-    # relaunch the script and select option 1 again; or relaunch the script at a later time.
-    # In both cases, be sure to enter the same path for the Enlightenment source
-    # folders as you previously used.
   fi
+  #
+  # Tip: You can try downloading the missing file(s) manually (see CLONEFL or CLONENL), then
+  # relaunch the script and select option 1 again; or relaunch the script at a later time.
+  # In both cases, be sure to enter the same path for the Enlightenment source
+  # folders as you previously used.
 
   case $COUNT in
   15)
@@ -308,17 +308,6 @@ mng_err() {
   exit 1
 }
 
-# Timestamp: See the date man page to convert epoch to human-readable date
-# or visit https://www.epochconverter.com/
-#
-# To restore a backup, use the same commands that were executed but with
-# the source and destination reversed, similar to this:
-# cp -aR /home/riley/Documents/ebackups/E_1737447643/.elementary/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/E_1737447643/.e/ /home/riley/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/config/ /home/riley/.config/terminology/
-# cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/themes/ /home/riley/.config/terminology/
-# (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
-#
 e_bkp() {
   TSTAMP=$(date +%s)
 
@@ -336,6 +325,17 @@ e_bkp() {
       cp -aR "$HOME/.config/terminology" "$DOCDIR/ebackups/ETERM_$TSTAMP" &>/dev/null
     sleep 2
   fi
+  #
+  # Timestamp: See the date man page to convert epoch to human-readable date
+  # or visit https://www.epochconverter.com/
+  #
+  # To restore a backup, use the same commands that were executed but with
+  # the source and destination reversed, similar to this:
+  # cp -aR /home/riley/Documents/ebackups/E_1737447643/.elementary/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/E_1737447643/.e/ /home/riley/
+  # cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/config/ /home/riley/.config/terminology/
+  # cp -aR /home/riley/Documents/ebackups/ETERM_1737447643/terminology/themes/ /home/riley/.config/terminology/
+  # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
 }
 
 e_tokens() {
