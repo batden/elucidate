@@ -661,8 +661,7 @@ set_p_src() {
   echo
   beep_attention
 
-  # Do not append a trailing slash (/) to the end of the path prefix,
-  # and double-check the path you entered before validating.
+  # Do not append a trailing slash (/) to the end of the path prefix.
   #
   read -r -p "Please enter a path for the Enlightenment source folders \
   (e.g. /home/$LOGNAME/Documents or /home/$LOGNAME/testing): " mypath
