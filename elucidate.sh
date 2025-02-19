@@ -435,6 +435,7 @@ rebuild_optim() {
   bin_deps
   e_tokens
   chk_ddcl
+  ddcl_chk
 
   cd "$ESRCDIR/rlottie"
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
@@ -512,6 +513,7 @@ rebuild_wayld() {
   bin_deps
   e_tokens
   chk_ddcl
+  ddcl_chk
 
   cd "$ESRCDIR/rlottie"
   printf "\n$BOLD%s $OFF%s\n\n" "Updating rlottie..."
@@ -731,6 +733,27 @@ chk_ddcl() {
     $SMIL
     sudo ldconfig
     rm -rf "$DLDIR"/v$DDCTL.tar.gz
+    echo
+  fi
+}
+
+ddcl_chk() {
+  if [ -d "$ESRC"/ddcutil-2.1.4 ]; then
+    printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
+    sleep 1
+    cd "$ESRC"/ddcutil-2.1.4
+    sudo make uninstall &>/dev/null
+    cd .. && rm -rf "$ESRC"/ddcutil-2.1.4
+    cd "$DLDIR"
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
+    tar xzvf v$DDTL.tar.gz -C "$ESRC"
+    cd "$ESRC"/ddcutil-$DDTL
+    $AUTGN
+    make
+    beep_attention
+    $SMIL
+    sudo ldconfig
+    rm -rf "$DLDIR"/v$DDTL.tar.gz
     echo
   fi
 }
