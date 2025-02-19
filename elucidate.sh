@@ -745,15 +745,15 @@ ddcl_chk() {
     sudo make uninstall &>/dev/null
     cd .. && rm -rf "$ESRC"/ddcutil-2.1.4
     cd "$DLDIR"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDTL.tar.gz
-    tar xzvf v$DDTL.tar.gz -C "$ESRC"
-    cd "$ESRC"/ddcutil-$DDTL
+    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
+    tar xzvf v$DDCTL.tar.gz -C "$ESRC"
+    cd "$ESRC"/ddcutil-$DDCTL
     $AUTGN
     make
     beep_attention
     $SMIL
     sudo ldconfig
-    rm -rf "$DLDIR"/v$DDTL.tar.gz
+    rm -rf "$DLDIR"/v$DDCTL.tar.gz
     echo
   fi
 }
