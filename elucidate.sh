@@ -738,16 +738,16 @@ chk_ddcl() {
 }
 
 ddcl_chk() {
-  if [ -d "$ESRC"/ddcutil-2.1.4 ]; then
+  if [ -d "$ESRCDIR"/ddcutil-2.1.4 ]; then
     printf "\n$BOLD%s $OFF%s\n" "Updating ddcutil..."
     sleep 1
-    cd "$ESRC"/ddcutil-2.1.4
+    cd "$ESRCDIR"/ddcutil-2.1.4
     sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$ESRC"/ddcutil-2.1.4
+    cd .. && rm -rf "$ESRCDIR"/ddcutil-2.1.4
     cd "$DLDIR"
     wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$DDCTL.tar.gz
-    tar xzvf v$DDCTL.tar.gz -C "$ESRC"
-    cd "$ESRC"/ddcutil-$DDCTL
+    tar xzvf v$DDCTL.tar.gz -C "$ESRCDIR"
+    cd "$ESRCDIR"/ddcutil-$DDCTL
     $AUTGN
     make
     beep_attention
