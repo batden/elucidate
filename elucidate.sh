@@ -66,7 +66,7 @@ AUTGN="./autogen.sh --prefix=$PREFIX"
 SNIN="sudo ninja -C build install"
 SMIL="sudo make install"
 DISTRO=$(lsb_release -sc)
-DDCTL=2.1.4
+DDCTL=2.2.0
 
 # Build dependencies, plus recommended and script-related packages.
 DEPS=(arc-theme
