@@ -848,6 +848,7 @@ install_now() {
   echo
 
   cp -f "$DLDIR/elucidate.sh" "$HOME/.local/bin"
+  chmod +x "$HOME/.local/bin/elucidate.sh"
 
   exit 0
 }
