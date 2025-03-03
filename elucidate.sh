@@ -393,11 +393,11 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for I in $prog_mbs; do
-    cd "$esrcdir/enlighten/$I"
-    printf "\n$bold%s $off%s\n\n" "Building $I..."
+  for i in $prog_mbs; do
+    cd "$esrcdir/enlighten/$i"
+    printf "\n$bold%s $off%s\n\n" "Building $i..."
 
-    case $I in
+    case $i in
     efl)
       meson setup build -Dbuildtype=plain \
         -Dfb=true \
@@ -451,13 +451,13 @@ rebuild_optim() {
   $snin
   sudo ldconfig
 
-  for I in $prog_mbs; do
-    cd "$esrcdir/enlighten/$I"
-    printf "\n$bold%s $off%s\n\n" "Updating $I..."
+  for i in $prog_mbs; do
+    cd "$esrcdir/enlighten/$i"
+    printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    case $I in
+    case $i in
     efl)
       sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
@@ -529,13 +529,13 @@ rebuild_wayld() {
   $snin
   sudo ldconfig
 
-  for I in $prog_mbs; do
-    cd "$esrcdir/enlighten/$I"
-    printf "\n$bold%s $off%s\n\n" "Updating $I..."
+  for i in $prog_mbs; do
+    cd "$esrcdir/enlighten/$i"
+    printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
     $rebasef && git pull
 
-    case $I in
+    case $i in
     efl)
       sudo chown "$USER" build/.ninja*
       meson setup --reconfigure build -Dbuildtype=release \
