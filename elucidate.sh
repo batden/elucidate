@@ -69,7 +69,8 @@ distro=$(lsb_release -sc)
 ddctl=2.2.0
 
 # Build dependencies, plus recommended and script-related packages.
-deps=(arc-theme
+deps=(
+  arc-theme
   automake
   build-essential
   ccache
@@ -163,7 +164,8 @@ deps=(arc-theme
   valgrind
   wayland-protocols
   wmctrl
-  xdotool)
+  xdotool
+)
 
 # Source repositories of programs: Latest source code available.
 clonefl="git clone https://git.enlightenment.org/enlightenment/efl.git"
@@ -183,22 +185,23 @@ clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonete="git clone https://github.com/dimmus/eflete.git"
 
 # “MBS” stands for Meson Build System.
-prog_mbs="
-efl
-terminology
-enlightenment
-ephoto
-rage
-evisum
-express
-ecrire
-enventor
-edi
-entice
-enlightenment-module-forecasts
-enlightenment-module-penguins
-enlightenment-module-places
-eflete"
+prog_mbs=(
+  efl
+  terminology
+  enlightenment
+  ephoto
+  rage
+  evisum
+  express
+  ecrire
+  enventor
+  edi
+  entice
+  enlightenment-module-forecasts
+  enlightenment-module-penguins
+  enlightenment-module-places
+  eflete
+)
 
 # ---------
 # FUNCTIONS
@@ -393,7 +396,7 @@ build_plain() {
   sudo ln -sf /usr/lib/x86_64-linux-gnu/preloadable_libintl.so /usr/lib/libintl.so
   sudo ldconfig
 
-  for i in $prog_mbs; do
+  for i in "${prog_mbs[@]}"; do
     cd "$esrcdir/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Building $i..."
 
@@ -451,7 +454,7 @@ rebuild_optim() {
   $snin
   sudo ldconfig
 
-  for i in $prog_mbs; do
+  for i in "${prog_mbs[@]}"; do
     cd "$esrcdir/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
@@ -529,7 +532,7 @@ rebuild_wayld() {
   $snin
   sudo ldconfig
 
-  for i in $prog_mbs; do
+  for i in "${prog_mbs[@]}"; do
     cd "$esrcdir/enlighten/$i"
     printf "\n$bold%s $off%s\n\n" "Updating $i..."
     git reset --hard &>/dev/null
