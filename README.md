@@ -11,7 +11,7 @@ Please take a look at the comments in the script before running it.
 
 ## Get started
 
-First, you will need to install git on your system.
+Before using elucidate, you may need to install the git package on your system if it isn't already there.
 
 Open a terminal window and type in the following:
 
