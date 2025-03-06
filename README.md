@@ -5,7 +5,7 @@ A neat Bash script to build/install/update the Enlightenment ecosystem on Ubuntu
 Please take a look at the comments in the script before running it.
 
 > [!NOTE]
-> It may be useful to keep a record of the pre-existing system status, before proceeding with the installation.
+> It may be useful to keep a record of the pre-existing system status before proceeding with the installation.
 >
 > Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
@@ -35,7 +35,7 @@ Navigate to the download folder and make the script executable:
 chmod +x elucidate.sh
 ```
 
-Then execute the script:
+Then, execute the script:
 
 ```bash
 ./elucidate.sh
