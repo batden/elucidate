@@ -208,7 +208,7 @@ prog_mbs=(
 # ---------
 
 # Audible feedback (event, sudo prompt...) on most systems.
-beep_dl_complete() {
+beep_complete() {
   aplay --quiet /usr/share/sounds/sound-icons/glass-water-1.wav 2>/dev/null
 }
 
@@ -288,7 +288,7 @@ cnt_dir() {
   case $count in
   15)
     printf "$green_bright%s $off%s\n\n" "All programs have been downloaded successfully."
-    beep_dl_complete
+    beep_complete
     sleep 2
     ;;
   0)
