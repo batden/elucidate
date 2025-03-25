@@ -638,7 +638,7 @@ do_bsh_alias() {
     # ---------------------
     # ENVIRONMENT VARIABLES
     # ---------------------
-    # (These variables can be accessed from any shell sessions.)
+    # (These variables can be accessed from any shell session.)
 
     # Compiler and linker flags added by ELUCIDATE.
     export CC="ccache gcc"
