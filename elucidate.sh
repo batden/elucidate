@@ -928,7 +928,7 @@ wayld_go() {
     cowsay -f www "That's it. Now type: enlightenment_start"
     echo
     # If Enlightenment fails to start, relaunch the script and select option 2.
-    # After the build is complete type exit, then go back to the login screen.
+    # After the build is complete, type exit, then go back to the login screen.
   fi
 
   exit 0
