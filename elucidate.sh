@@ -281,10 +281,10 @@ cnt_dir() {
     exit 1
   fi
   #
-  # Tip: You can try downloading the missing file(s) manually (see clonefl or clonenl), then
-  # relaunch the script and select option 1 again; or relaunch the script at a later time.
-  # In both cases, be sure to enter the same path for the Enlightenment source
-  # folders as you previously used.
+  # Tip: You can try to download the missing file(s) manually (see clonefl or clonenl), then
+  # rerun the script and select option 1 again; or relaunch the script at a later time.
+  # In both cases, be sure to enter the same path for the Enlightenment source folders
+  # as you used before.
 
   case $count in
   15)
@@ -378,8 +378,9 @@ rstrt_e() {
 }
 
 # Add optional JXL support before executing the script?
-# For best results, jpeg xl has to be compiled from source. If you really need
-# jxl support in efl, please follow the instructions below:
+# For best results, jpeg xl has to be compiled from source.
+# If you need jxl support in efl, please follow the
+# instructions below:
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
