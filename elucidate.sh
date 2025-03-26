@@ -1,14 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC1091 disable=SC2164
 
-# This script allows you to easily and safely install Enlightenment, along with
+# This script allows you to install Enlightenment handily and securely, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
 # in your Ubuntu LTS desktop system.
 
 # Supported distribution: Ubuntu Noble Numbat.
 
-# ELUCIDATE.SH takes care of downloading, configuring and building everything you
-# need to enjoy the very latest version of the Enlightenment environment
+# ELUCIDATE.SH takes care of downloading, configuring, and building everything
+# you need to enjoy the very latest version of the Enlightenment environment
 # (DEB packages, if they exist, tend to lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
@@ -23,8 +23,8 @@
 
 # Heads up!
 # Enlightenment programs compiled from git source code will inevitably come into conflict
-# with the ones installed from DEB packages. Therefore, remove any previous binary
-# installations of EFL, Enlightenment and related applications before running
+# with those installed from DEB packages. Therefore, remove all previous binary
+# installations of EFL, Enlightenment, and related applications before running
 # this script.
 
 # Also note that ELUCIDATE.SH is not compatible with non-standard package managers like Nix.
