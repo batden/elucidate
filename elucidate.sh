@@ -440,7 +440,6 @@ rebuild_optim() {
 
   bin_deps
   e_tokens
-  chk_ddcl
   ddcl_chk
 
   cd "$esrcdir/rlottie"
@@ -518,7 +517,6 @@ rebuild_wayld() {
 
   bin_deps
   e_tokens
-  chk_ddcl
   ddcl_chk
 
   cd "$esrcdir/rlottie"
@@ -733,27 +731,6 @@ chk_pv() {
   if [ ! -x /usr/bin/pv ]; then
     printf "\n$bold%s $off%s\n\n" "Installing the pv command for menu animation..."
     sudo apt install -y pv
-  fi
-}
-
-chk_ddcl() {
-  if [ -d "$esrcdir"/ddcutil-2.0.0 ]; then
-    printf "\n$bold%s $off%s\n" "Updating ddcutil..."
-    sleep 1
-    cd "$esrcdir"/ddcutil-2.0.0
-    sudo make uninstall &>/dev/null
-    cd .. && rm -rf "$esrcdir"/ddcutil-2.0.0
-    cd "$dldir"
-    wget -c https://github.com/rockowitz/ddcutil/archive/refs/tags/v$ddctl.tar.gz
-    tar xzvf v$ddctl.tar.gz -C "$esrcdir"
-    cd "$esrcdir"/ddcutil-$ddctl
-    $autgn
-    make
-    beep_attention
-    $smil
-    sudo ldconfig
-    rm -rf "$dldir"/v$ddctl.tar.gz
-    echo
   fi
 }
 
