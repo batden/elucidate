@@ -81,7 +81,6 @@ deps=(
   fonts-noto
   freeglut3-dev
   gettext
-  git
   graphviz
   gstreamer1.0-plugins-bad
   gstreamer1.0-plugins-ugly
@@ -158,7 +157,6 @@ deps=(
   meson
   ninja-build
   papirus-icon-theme
-  pv
   texlive-base
   texlive-font-utils
   unity-greeter-badges
