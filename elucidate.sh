@@ -310,29 +310,26 @@ e_bkp() {
 
   if [ -d "$docdir/ebackups" ]; then
     rm -rf "$docdir/ebackups"
-    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
-      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
-    sleep 2
-  else
-    mkdir -p "$docdir/ebackups/e_$tstamp" && mkdir -p "$docdir/ebackups/eterm_$tstamp" &&
-      cp -aR "$HOME/.elementary" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.e" "$docdir/ebackups/e_$tstamp" &&
-      cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
+
+    mkdir -p "$docdir/ebackups/e_$tstamp" "$docdir/ebackups/eterm_$tstamp"
+
+    cp -aR "$HOME/.elementary" "$HOME/.e" "$docdir/ebackups/e_$tstamp" &>/dev/null
+    cp -aR "$HOME/.config/terminology" "$docdir/ebackups/eterm_$tstamp" &>/dev/null
+
     sleep 2
   fi
   #
-  # Timestamp: See the date man page to convert epoch to human-readable date
+  # Timestamp: See the date man page to convert epoch to a human-readable date
   # or visit https://www.epochconverter.com/
   #
-  # To restore a backup, use the same commands that were executed but with
-  # the source and destination reversed, similar to this:
+  # To restore a backup, use the same commands that were run but with
+  # the source and destination reversed, similar to this, in a terminal:
   # cp -aR /home/riley/Documents/ebackups/e_1743247879/.elementary/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/e_1743247879/.e/ /home/riley/
   # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/config/ /home/riley/.config/terminology/
   # cp -aR /home/riley/Documents/ebackups/eterm_1743247879/terminology/themes/ /home/riley/.config/terminology/
-  # (Then press Ctrl+Alt+End to restart Enlightenment if you are currently logged into.)
+  #
+  # Then close the terminal and press Ctrl+Alt+End to restart Enlightenment if you are logged in.
 }
 
 e_tokens() {
@@ -340,7 +337,7 @@ e_tokens() {
 
   token=$(wc -l <"$HOME/.cache/ebuilds/etokens")
 
-  if [ "$token" -gt 3 ]; then
+  if [ "$token" -gt 4 ]; then
     echo
     # Questions: Enter either y or n, or press Enter to accept the default value (capital letter).
     beep_question
