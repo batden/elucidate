@@ -602,11 +602,11 @@ do_tests() {
     exit 1
   fi
 
-  if ! test -d "$HOME/.local/bin"; then
+  if [[ ! -d "$HOME/.local/bin" ]]; then
     mkdir -p "$HOME/.local/bin"
   fi
 
-  if ! test -d "$HOME/.cache/ebuilds"; then
+  if [[ ! -d "$HOME/.cache/ebuilds" ]]; then
     mkdir -p "$HOME/.cache/ebuilds"
   fi
 }
