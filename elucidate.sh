@@ -1,5 +1,5 @@
 #!/bin/bash
-# shellcheck disable=SC1091 disable=SC2164
+# shellcheck disable=SC1091 disable=SC2164 disable=SC2126
 
 # This script allows you to install Enlightenment handily and securely, along with
 # other applications based on the Enlightenment Foundation Libraries (EFL),
