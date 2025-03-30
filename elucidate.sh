@@ -720,6 +720,13 @@ chk_pv() {
   fi
 }
 
+chk_sl() {
+  if [ ! -x /usr/games/sl ]; then
+    printf "\n$bold%s $off%s\n\n" "Installing the sl command for special animation..."
+    sudo apt install -y sl
+  fi
+}
+
 install_now() {
   clear
   printf "\n$green_bright%s $off%s\n\n" "* INSTALLING ENLIGHTENMENT DESKTOP ENVIRONMENT: PLAIN BUILD ON XORG SERVER *"
@@ -911,5 +918,6 @@ bhd() {
 }
 
 chk_pv
+chk_sl
 lo
 bhd
