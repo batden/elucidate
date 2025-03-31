@@ -719,7 +719,6 @@ mv_sysfiles() {
   sudo mv -f /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
   sudo mv -f /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop
-
 }
 
 chk_pv() {
@@ -802,7 +801,7 @@ install_now() {
   beep_ok
 
   printf "\n\n$blue_bright%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$blue_bright%s %s" '“Check update checking” —— You can disable this feature as it is not helpful for this type of installation.'
+  printf "\n$blue_bright%s %s" '“Enable update checking” —— You can disable this feature as it is not helpful for this type of installation.'
   printf "\n$blue_bright%s $off%s\n\n" '“Network management support” —— Connman is not needed (ignore the warning message).'
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
