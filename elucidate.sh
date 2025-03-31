@@ -713,10 +713,9 @@ get_preq() {
   echo
 }
 
-do_link() {
-  sudo ln -sf /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
-  sudo ln -sf /usr/local/etc/enlightenment/system.conf /etc/enlightenment/system.conf
-  sudo ln -sf /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
+mv_sysfiles() {
+  sudo mv -f /usr/local/etc/enlightenment/sysactions.conf /etc/enlightenment/sysactions.conf
+  sudo mv -f /usr/local/etc/xdg/menus/e-applications.menu /etc/xdg/menus/e-applications.menu
 }
 
 chk_pv() {
@@ -791,7 +790,7 @@ install_now() {
   doxygen
 
   sudo mkdir -p /etc/enlightenment
-  do_link
+  mv_sysfiles
 
   sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop
