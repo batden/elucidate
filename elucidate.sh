@@ -833,11 +833,11 @@ release_go() {
   sudo ln -sf /usr/local/share/xsessions/enlightenment.desktop \
     /usr/share/xsessions/enlightenment.desktop
 
-  if [ -f /usr/share/wayland-sessions/enlightenment.desktop ]; then
+  if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then
     sudo rm -rf /usr/share/wayland-sessions/enlightenment.desktop
   fi
 
-  if [ -f /usr/local/share/wayland-sessions/enlightenment.desktop ]; then
+  if [ -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop ]; then
     sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
   fi
 
@@ -863,8 +863,8 @@ wayld_go() {
   rebuild_wayld
 
   sudo mkdir -p /usr/share/wayland-sessions
-  sudo ln -sf /usr/local/share/wayland-sessions/enlightenment.desktop \
-    /usr/share/wayland-sessions/enlightenment.desktop
+  sudo ln -sf /usr/local/share/wayland-sessions/enlightenment-wayland.desktop \
+    /usr/share/wayland-sessions/enlightenment-wayland.desktop
 
   beep_ok
 
