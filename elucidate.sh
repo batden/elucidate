@@ -830,7 +830,7 @@ release_go() {
   rebuild_optim
 
   sudo mv -f /usr/local/share/xsessions/enlightenment.desktop \
-    /usr/share/xsessions/enlightenment.desktop
+    /usr/share/xsessions/enlightenment.desktop &>/dev/null
 
   if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then
     sudo rm -rf /usr/share/wayland-sessions/enlightenment.desktop
@@ -863,7 +863,7 @@ wayld_go() {
 
   sudo mkdir -p /usr/share/wayland-sessions
   sudo mv -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop \
-    /usr/share/wayland-sessions/enlightenment-wayland.desktop
+    /usr/share/wayland-sessions/enlightenment-wayland.desktop &>/dev/null
 
   beep_ok
 
