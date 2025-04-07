@@ -785,7 +785,7 @@ install_now() {
   mv_sysfiles
 
   if [ -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop ]; then
-    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
+    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment-wayland.desktop
   fi
 
   if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then
@@ -841,11 +841,11 @@ release_go() {
     /usr/share/xsessions/enlightenment.desktop &>/dev/null
 
   if [ -f /usr/share/wayland-sessions/enlightenment-wayland.desktop ]; then
-    sudo rm -rf /usr/share/wayland-sessions/enlightenment.desktop
+    sudo rm -rf /usr/share/wayland-sessions/enlightenment-wayland.desktop
   fi
 
   if [ -f /usr/local/share/wayland-sessions/enlightenment-wayland.desktop ]; then
-    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment.desktop
+    sudo rm -rf /usr/local/share/wayland-sessions/enlightenment-wayland.desktop
   fi
 
   beep_ok
