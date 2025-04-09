@@ -61,6 +61,6 @@ See [eloge.sh](https://github.com/batden/eloge).
 ![GitHub Image](/images/enlightenment.jpg)
 
 _Please help us continue to promote this fantastic desktop environment.
-Over the years, writing bash scripts, translations, documentation, and bug reports has been a substantial endeavor._
+Over the years, writing bash scripts, translations, documentation, and bug reports has been a considerable effort._
 
 [Donate with PayPal](https://www.paypal.com/donate/?hosted_button_id=QGXWYZWH5QP5E) :trophy:
