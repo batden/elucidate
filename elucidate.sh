@@ -378,7 +378,8 @@ rstrt_e() {
 # https://gist.github.com/batden/0f45f8b8578ec70ee911b920b6eacd39
 #
 # Then change the option “-Devas-loaders-disabler=jxl” to
-# "-Devas-loaders-disabler=” whenever it's applicable.
+# "-Devas-loaders-disabler=” (no value at the end)
+# whenever it's applicable.
 #
 # Note: If building jxl is too much of a hassle for you, then install
 # the libjxl-dev package instead (this older version still works).
