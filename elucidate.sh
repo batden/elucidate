@@ -125,6 +125,7 @@ deps=(
   libpoppler-dev
   libpoppler-private-dev
   libpulse-dev
+  libqoi-dev
   libraw-dev
   librsvg2-dev
   libsdl1.2-dev
