@@ -9,7 +9,7 @@ Please refer to the script comments for hints and additional information.
 >
 > Check out our [backup script](https://gist.github.com/batden/993b5ee997b3df2c3b075907a1dff116).
 
-## Getting started
+## Installation
 
 Before using elucidate, you may need to install the git package on your system if it isn't already there.
 
@@ -52,11 +52,13 @@ elucidate.sh
 
 That's it.
 
+## Uninstallation
+
 You can uninstall Enlightenment and related applications from your computer at any time.
 
 See [eloge.sh](https://github.com/batden/eloge).
 
-## In the picture
+## In the Picture
 
 ![GitHub Image](/images/enlightenment.jpg)
 
