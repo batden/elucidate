@@ -943,7 +943,11 @@ bhd() {
   fi
 }
 
-chk_pv
-chk_sl
-lo
-bhd
+main() {
+  chk_pv
+  chk_sl
+  lo
+  bhd
+}
+
+main "$@"
