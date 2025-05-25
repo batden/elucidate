@@ -1,15 +1,14 @@
 #!/bin/bash
 # shellcheck disable=SC1091 disable=SC2164 disable=SC2126
 
-# This script allows you to install Enlightenment handily and securely, along with
-# other applications based on the Enlightenment Foundation Libraries (EFL),
-# in your Ubuntu LTS desktop system.
+# This script makes it easy to install or update Enlightenment and other applications
+# based on the Enlightenment Foundation Libraries (EFL) on your Ubuntu LTS desktop.
 
 # Supported distribution: Ubuntu Noble Numbat.
 
 # ELUCIDATE.SH takes care of downloading, configuring, and building everything
 # you need to enjoy the very latest version of the Enlightenment environment
-# (DEB packages, if they exist, tend to lag far behind). Once installed,
+# (DEB packages ——if they exist—— often lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
 # Optional: Additional steps may be taken to achieve optimal results.
@@ -22,10 +21,10 @@
 # See also the repository's wiki for post-installation hints.
 
 # Heads up!
-# Enlightenment programs compiled from git source code will inevitably conflict
-# with those installed from DEB packages. Therefore, remove all previous binary
-# installations of EFL, Enlightenment, and related applications before running
-# this script.
+# Enlightenment programs compiled from Git source code will inevitably conflict
+# with those installed from DEB packages. Therefore, remove all previous
+# binary installations of EFL, Enlightenment, and related applications
+# before running this script.
 
 # Also note that ELUCIDATE.SH is not compatible with non-standard package managers such as Nix.
 
@@ -34,7 +33,7 @@
 # See https://creativecommons.org/licenses/by/4.0/
 
 # If you find our scripts useful, please consider starring our repositories or
-# donating with PayPal (see README.md) to show your support.
+# donating via PayPal (see README.md) to show your support.
 # Thank you!
 
 # ---------------
@@ -68,7 +67,7 @@ smil="sudo make install"
 distro=$(lsb_release -sc)
 ddctl=2.2.0
 
-# Build dependencies, plus recommended and script-related packages.
+# Build dependencies, as well as recommended and script-related packages.
 deps=(
   arc-theme
   automake
@@ -184,7 +183,7 @@ clonepn="git clone https://git.enlightenment.org/enlightenment/enlightenment-mod
 clonepl="git clone https://git.enlightenment.org/enlightenment/enlightenment-module-places.git"
 clonete="git clone https://github.com/dimmus/eflete.git"
 
-# “MBS” stands for Meson Build System.
+# Programs to be built using the Meson Build System (“mbs”).
 prog_mbs=(
   efl
   terminology
@@ -630,6 +629,7 @@ do_tests() {
   fi
 }
 
+# Create a bash_aliases file with customized settings.
 do_bsh_alias() {
   if [ -f "$HOME/.bash_aliases" ]; then
     mv -vb "$HOME/.bash_aliases" "$HOME/.bash_aliases_bak"
