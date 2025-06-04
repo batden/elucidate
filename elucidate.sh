@@ -8,7 +8,7 @@
 
 # ELUCIDATE.SH takes care of downloading, configuring, and building everything
 # you need to enjoy the very latest version of the Enlightenment environment
-# (DEB packages ——if they exist—— often lag far behind). Once installed,
+# (DEB packages——if they exist——often lag far behind). Once installed,
 # you can update your Enlightenment desktop whenever you like.
 
 # Optional: Additional steps may be taken to achieve optimal results.
@@ -821,8 +821,8 @@ install_now() {
   beep_ok
 
   printf "\n\n$blue_bright%s %s" "INITIAL SETUP WIZARD TIPS:"
-  printf "\n$blue_bright%s %s" '“Enable update checking” —— You can disable this feature as it is not helpful for this type of installation.'
-  printf "\n$blue_bright%s $off%s\n\n" '“Network management support” —— Connman is not required. You can ignore the message that appears.'
+  printf "\n$blue_bright%s %s" '“Enable update checking” — You can disable this feature as it is not helpful for this type of installation.'
+  printf "\n$blue_bright%s $off%s\n\n" '“Network management support” — Connman is not required. You can ignore the message that appears.'
 
   # Note: Enlightenment adds three shortcut icons (namely home.desktop, root.desktop and tmp.desktop)
   # to your Gnome Desktop, you can safely delete them if it bothers you.
