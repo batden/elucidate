@@ -207,16 +207,12 @@ prog_mbs=(
 # ---------
 
 # Audible feedback (event, sudo prompt...) on most systems.
-beep_complete() {
-  aplay --quiet /usr/share/sounds/sound-icons/glass-water-1.wav 2>/dev/null
-}
-
 beep_attention() {
   aplay --quiet /usr/share/sounds/sound-icons/percussion-50.wav 2>/dev/null
 }
 
-beep_question() {
-  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav 2>/dev/null
+beep_complete() {
+  aplay --quiet /usr/share/sounds/sound-icons/glass-water-1.wav 2>/dev/null
 }
 
 beep_exit() {
@@ -225,6 +221,14 @@ beep_exit() {
 
 beep_ok() {
   aplay --quiet /usr/share/sounds/sound-icons/trumpet-12.wav 2>/dev/null
+}
+
+beep_question() {
+  aplay --quiet /usr/share/sounds/sound-icons/guitar-13.wav 2>/dev/null
+}
+
+beep_warning() {
+  aplay --quiet /usr/share/sounds/sound-icons/cembalo-12.wav 2>/dev/null
 }
 
 # Menu hints and prompts.
@@ -425,10 +429,16 @@ build_plain() {
       ninja -C build || mng_err
       ;;
     edi)
-      meson setup build -Dbuildtype=plain \
-        -Dlibclang-headerdir=/usr/lib/llvm-11/include \
-        -Dlibclang-libdir=/usr/lib/llvm-11/lib
-      ninja -C build
+      if [ ! -d "/usr/lib/llvm-11" ]; then
+        beep_warning
+        printf "\n$yellow_bright%s $off%s\n\n" "WARNING: LLVM-11 DEPENDENCIES FOR EDI WERE NOT FOUND."
+        sleep 2
+      else
+        meson setup build -Dbuildtype=plain \
+          -Dlibclang-headerdir=/usr/lib/llvm-11/include \
+          -Dlibclang-libdir=/usr/lib/llvm-11/lib
+        ninja -C build
+      fi
       ;;
     *)
       meson setup build -Dbuildtype=plain
