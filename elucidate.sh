@@ -917,10 +917,7 @@ wayld_go() {
   exit 0
 }
 
-# Lo and behold (“bhd”)!
-#
 # First, display the selection menu...
-#
 lo() {
   trap '{ printf "\n$red_bright%s $off%s\n\n" "KEYBOARD INTERRUPT."; exit 130; }' SIGINT
 
@@ -935,7 +932,7 @@ lo() {
 }
 
 # Then get the user's choice.
-bhd() {
+and_behold() {
   if [ "$usr_input" == 1 ]; then
     disk_spc
     do_tests
@@ -956,7 +953,7 @@ main() {
   chk_pv
   chk_sl
   lo
-  bhd
+  and_behold
 }
 
 main "$@"
